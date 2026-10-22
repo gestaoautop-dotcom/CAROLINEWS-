@@ -234,17 +234,31 @@ button:focus-visible {
 
 /* ============ SOBRE MIM: IDENTIDADE / RETRATO / OFERTA ============ */
 .about-showcase {
-  padding: clamp(64px, 7vw, 112px) 0;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  aspect-ratio: 3 / 2;
   background: #10151b;
   scroll-margin-top: 80px;
 }
 .about-layout {
-  width: min(1600px, 92%);
+  width: 92%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(24px, 3vw, 52px);
+  gap: clamp(20px, 2vw, 40px);
+}
+.about-identity { grid-column: 1; grid-row: 1; }
+.about-offer { grid-column: 3; grid-row: 1; }
+.about-identity, .about-offer { position: relative; z-index: 2; padding: 40px 0; }
+.about-showcase::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(7,12,20,.94) 0%, rgba(7,12,20,.8) 23%, rgba(7,12,20,0) 37%, rgba(7,12,20,0) 63%, rgba(7,12,20,.85) 77%, rgba(7,12,20,.96) 100%);
 }
 .about-identity, .about-offer { min-width: 0; }
 .about-eyebrow {
@@ -272,18 +286,18 @@ button:focus-visible {
 }
 .about-roles span { color: #4c8fff; margin-left: 5px; }
 .about-portrait {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
   margin: 0;
-  width: 100%;
   overflow: hidden;
-  background: #182334;
-  border-radius: 3px;
 }
 .about-portrait img {
   display: block;
   width: 100%;
-  height: clamp(460px, 42vw, 650px);
-  object-fit: cover;
-  object-position: 50% 40%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 .about-offer h3 {
   font-size: clamp(23px, 2.1vw, 34px);
@@ -315,19 +329,30 @@ button:focus-visible {
 }
 .about-cta:hover { color: #fff; background: #19365c; border-color: #89b6ff; }
 .about-cta span { flex: 0 0 auto; font-size: 18px; }
-@media (max-width: 991.98px) {
-  .about-layout { gap: 22px; width: 94%; }
-  .about-portrait img { height: 500px; }
-  .about-eyebrow { font-size: 9px; margin-bottom: 18px; }
-  .about-identity h2 { font-size: 27px; }
-  .about-offer h3 { font-size: 23px; }
-}
-@media (max-width: 767.98px) {
-  .about-layout { width: min(560px, 88%); grid-template-columns: 1fr; gap: 30px; }
-  .about-identity h2 { font-size: clamp(32px, 8vw, 44px); margin-bottom: 16px; }
+@media (max-width: 1099.98px) {
+  .about-showcase { aspect-ratio: auto; padding-top: 66.6667%; }
+  .about-portrait { bottom: auto; height: auto; aspect-ratio: 3 / 2; }
+  .about-showcase::after {
+    background: linear-gradient(180deg, transparent 0%, transparent calc(66.6667vw - 75px), #10151b 66.6667vw);
+  }
+  .about-layout {
+    width: min(900px, 88%);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    align-items: start;
+    gap: 36px;
+    padding: 30px 0 64px;
+  }
+  .about-identity { grid-column: 1; grid-row: 1; }
+  .about-offer { grid-column: 2; grid-row: 1; }
+  .about-identity, .about-offer { padding: 0; }
+  .about-identity h2 { font-size: 32px; }
   .about-roles { font-size: 14px; }
-  .about-portrait img { height: auto; aspect-ratio: 4 / 5; object-position: 50% 40%; }
-  .about-offer h3 { font-size: clamp(26px, 6vw, 34px); }
+  .about-offer h3 { font-size: 27px; }
+}
+@media (max-width: 599.98px) {
+  .about-layout { grid-template-columns: 1fr; gap: 36px; }
+  .about-offer { grid-column: 1; grid-row: 2; }
+  .about-offer h3 { font-size: 28px; }
   .about-description { font-size: 14px; }
   .about-cta { max-width: 100%; }
 }
