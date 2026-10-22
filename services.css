@@ -1,0 +1,57 @@
+/* SERVICES — foto: altere o src de .studio-photo em services.html.
+   Enquadramento: ajuste object-position abaixo. */
+.services-page { background:#efeee9; color:#252622; }
+.skip-content { position:fixed; top:12px; left:12px; z-index:2000; padding:12px; color:#111; background:white; transform:translateY(-180%); }
+.skip-content:focus { transform:none; }
+.studio-cover { position:relative; min-height:640px; height:100svh; overflow:hidden; display:grid; place-items:center; background:#464742; color:white; }
+.studio-photo,.studio-shade { position:absolute; inset:0; width:100%; height:100%; }
+.studio-photo { object-fit:cover; object-position:50% 50%; filter:grayscale(1); animation:studio-entry 1.6s ease-out both; }
+.studio-shade { background:linear-gradient(180deg,rgba(0,0,0,.38),rgba(0,0,0,.42) 55%,rgba(0,0,0,.6)); }
+.studio-heading { position:relative; text-align:center; padding:90px 22px; animation:studio-type .9s ease-out both; }
+.studio-heading h1 { margin:0; font-size:clamp(36px,5.8vw,84px); line-height:1.12; font-weight:300; letter-spacing:-.045em; }
+.studio-heading strong { font-weight:600; font-style:italic; letter-spacing:-.045em; }
+.studio-heading p { margin:12px 0 0; font-size:clamp(16px,2.2vw,28px); letter-spacing:.075em; font-weight:400; }
+.studio-bottom { position:absolute; bottom:32px; left:5vw; right:5vw; display:flex; justify-content:space-between; align-items:center; gap:20px; font-size:10px; letter-spacing:.13em; }
+.studio-bottom a { color:white; font-size:11px; letter-spacing:.04em; padding:12px 0; }
+.studio-bottom a span { margin-left:16px; font-size:18px; }
+.services-guide { padding:110px max(6vw,24px) 56px; max-width:1500px; margin:auto; scroll-margin-top:90px; }
+.guide-intro { display:grid; grid-template-columns:1.2fr 1fr; column-gap:10%; margin-bottom:72px; }
+.eyebrow { grid-column:1/-1; font-size:10px; letter-spacing:.15em; margin-bottom:24px; }
+.guide-intro h2 { font-size:clamp(34px,4vw,60px); line-height:1.15; font-weight:400; letter-spacing:-.05em; margin:0; }
+.guide-intro h2 em { font-weight:300; }
+.guide-description { margin:0; align-self:end; font-size:14px; line-height:1.9; color:#5c5d55; max-width:420px; }
+.service-item { border-top:1px solid #c7c8bd; }
+.service-item:last-child { border-bottom:1px solid #c7c8bd; }
+.service-item summary { display:flex; align-items:center; gap:32px; cursor:pointer; padding:29px 0; list-style:none; }
+.service-item summary::-webkit-details-marker { display:none; }
+.service-number { font-size:11px; color:#64655d; min-width:24px; }
+.service-item h3 { font-size:clamp(23px,3vw,40px); font-weight:400; letter-spacing:-.045em; margin:0; }
+.service-toggle { margin-left:auto; font-size:30px; font-weight:300; line-height:1; transition:transform .25s; }
+.service-item[open] .service-toggle { transform:rotate(45deg); }
+.service-copy { padding:0 50px 30px 56px; max-width:740px; color:#5c5d55; font-size:14px; line-height:1.8; }
+.service-subtitle { color:#252622; font-weight:500; margin-bottom:8px; }
+.guide-end { display:flex; justify-content:space-between; gap:20px; align-items:center; margin-top:64px; font-size:13px; }
+.guide-end p { margin:0; }
+.guide-end a { color:#252622; border-bottom:1px solid #252622; padding:10px 0; }
+.guide-end a span { margin-left:24px; }
+.services-footer { margin:0 max(6vw,24px); padding:28px 0; border-top:1px solid #c7c8bd; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px; }
+.services-footer a { color:#505149; font-size:10px; }
+.services-footer>a:first-child { font-size:22px; letter-spacing:.04em; }
+.services-footer span { font-size:10px; color:#64655d; }
+.services-guide a:focus-visible,.services-footer a:focus-visible,summary:focus-visible { outline:2px solid #252622; outline-offset:6px; }
+@keyframes studio-entry { from { transform:scale(1.035); } to { transform:scale(1); } }
+@keyframes studio-type { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+@media(max-width:767px) {
+ .studio-cover { min-height:580px; }
+ .studio-bottom { bottom:24px; flex-wrap:wrap; }
+ .studio-bottom>span:last-child { display:none; }
+ .guide-intro { grid-template-columns:1fr; gap:26px; margin-bottom:48px; }
+ .eyebrow { margin-bottom:0; }
+ .guide-description { max-width:100%; }
+ .services-guide { padding-top:72px; }
+ .service-item summary { gap:16px; padding:25px 0; }
+ .service-copy { padding-left:40px; padding-right:16px; }
+ .guide-end { align-items:flex-start; flex-direction:column; gap:8px; margin-top:40px; }
+ .services-footer { align-items:flex-start; flex-direction:column; }
+}
+@media(prefers-reduced-motion:reduce) { .studio-photo,.studio-heading { animation:none; } .service-toggle { transition:none; } }
