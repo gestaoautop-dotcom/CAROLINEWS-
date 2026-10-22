@@ -330,10 +330,10 @@ button:focus-visible {
 .about-cta:hover { color: #fff; background: #19365c; border-color: #89b6ff; }
 .about-cta span { flex: 0 0 auto; font-size: 18px; }
 @media (max-width: 1099.98px) {
-  .about-showcase { min-height: 0; padding-top: 47.7273%; }
-  .about-portrait { bottom: auto; height: auto; aspect-ratio: 660 / 315; }
+  .about-showcase { min-height: 0; padding-top: 47.7051%; }
+  .about-portrait { bottom: auto; height: auto; aspect-ratio: 2048 / 977; }
   .about-showcase::after {
-    background: linear-gradient(180deg, transparent 0%, transparent calc(47.7273vw - 75px), #10151b 47.7273vw);
+    background: linear-gradient(180deg, transparent 0%, transparent calc(47.7051vw - 75px), #10151b 47.7051vw);
   }
   .about-layout {
     width: min(900px, 88%);
