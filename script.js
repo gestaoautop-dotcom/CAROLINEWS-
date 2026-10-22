@@ -3,7 +3,7 @@
   const el = document.getElementById("typed-text");
   if (!el) return;
 
-  const words = ["A Developer.", "A Designer."];
+  const words = ["desenvolvedora.", "designer."];
   const typeSpeed = 110;     // ms por letra digitada
   const deleteSpeed = 60;    // ms por letra apagada
   const pauseAfterWord = 1600;
