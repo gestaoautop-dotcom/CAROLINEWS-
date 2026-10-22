@@ -1,0 +1,232 @@
+/* ============ RESET / BASE ============ */
+:root {
+  --bg-dark: #14171b;
+  --text-light: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.75);
+  --nav-height: 80px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-light);
+  background: var(--bg-dark);
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+/* ============ NAVBAR ============ */
+.custom-nav {
+  padding: 24px 0;
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+.custom-nav.sticky {
+  /* classe adicionada via JS ao rolar a página */
+}
+
+.custom-nav.nav-scrolled {
+  padding: 12px 0;
+  background: rgba(20, 23, 27, 0.95);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+}
+.logo:hover { color: var(--text-light); }
+
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 6px 12px;
+  margin: 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover { color: #cfd4da; }
+
+/* pontinho abaixo do item ativo */
+.navbar-nav .nav-item.active .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-light);
+  transform: translateX(-50%);
+}
+
+.navbar-toggler {
+  border: 0;
+  color: var(--text-light);
+  font-size: 22px;
+}
+.navbar-toggler:focus { box-shadow: none; }
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    margin-top: 12px;
+    padding: 12px 0;
+    background: rgba(20, 23, 27, 0.97);
+    border-radius: 6px;
+  }
+  .navbar-nav .nav-item.active .nav-link::after { display: none; }
+}
+
+/* ============ HERO ============ */
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* coloque sua imagem em img/home-bg.jpg; o gradiente é o fallback */
+  background:
+    linear-gradient(180deg, #1b1f24 0%, #0f1215 100%),
+    url("img/home-bg.jpg") center / cover no-repeat;
+  background-image: url("img/home-bg.jpg"), linear-gradient(180deg, #1b1f24 0%, #0f1215 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.home-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 14, 0.55);
+}
+
+.home .container { position: relative; z-index: 2; }
+
+.home-content { padding-top: var(--nav-height); }
+
+.home-subtitle {
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.home-title {
+  margin: 0;
+  font-size: clamp(34px, 6vw, 62px);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.home-title strong { font-weight: 700; }
+
+/* cursor piscando do efeito de digitação */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  margin-left: 4px;
+  vertical-align: -0.08em;
+  background: var(--text-light);
+  animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ============ REDES SOCIAIS ============ */
+.social-list { margin: 34px 0 30px; }
+
+.social-list a {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 13px;
+  color: var(--text-light);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-list a:hover {
+  color: #cfd4da;
+  transform: translateY(-3px);
+}
+
+/* ============ BOTÃO DOWNLOAD CV ============ */
+.btn-cv {
+  padding: 10px 28px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  background: transparent;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.btn-cv:hover,
+.btn-cv:focus-visible {
+  background: var(--text-light);
+  color: #14171b;
+}
+
+/* ============ SCROLL (MOUSE) ============ */
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  z-index: 2;
+  transform: translateX(-50%);
+}
+
+.mouse {
+  display: block;
+  width: 24px;
+  height: 38px;
+  border: 2px solid var(--text-light);
+  border-radius: 14px;
+  position: relative;
+}
+
+.wheel {
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  width: 3px;
+  height: 7px;
+  margin-left: -1.5px;
+  border-radius: 2px;
+  background: var(--text-light);
+  animation: wheel 1.6s ease-in-out infinite;
+}
+
+@keyframes wheel {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(14px); }
+}
+
+/* ============ SEÇÃO PLACEHOLDER ============ */
+.placeholder-section {
+  padding: 120px 0;
+  background: #1b1f24;
+}
+
+/* ============ ACESSIBILIDADE ============ */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cursor, .wheel { animation: none; }
+}
