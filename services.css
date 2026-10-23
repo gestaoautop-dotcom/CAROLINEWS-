@@ -90,3 +90,41 @@
 @media(max-width:991px){.method-step{grid-template-columns:44px minmax(0,1fr);gap:20px}.method-label{grid-column:2}.method-content{grid-column:2}.method-step:not(:last-child)::before{left:21px}.method-label h3 br{display:none}.method-label h3 em::before{content:" "}.method-final{grid-template-columns:44px minmax(0,1fr)}.method-route{flex-wrap:wrap;justify-content:flex-start;gap:18px}.method-route a{max-width:145px}.method-arrow{font-size:16px}.method-pillars{gap:18px}}
 @media(max-width:599px){.method-route{display:grid;grid-template-columns:1fr 22px;gap:15px;padding:24px 0;margin-bottom:42px}.method-route a{max-width:none;display:flex;align-items:baseline;gap:12px;font-size:12px}.method-route a span{margin:0}.method-arrow{transform:rotate(90deg);text-align:center}.method-route a:last-child{grid-column:1/-1}.method-step{grid-template-columns:30px minmax(0,1fr);gap:18px 14px;padding-bottom:45px}.method-marker{width:30px;height:30px;font-size:9px}.method-step:not(:last-child)::before{left:14px;top:42px}.method-kicker{font-size:8px;margin-top:0;margin-bottom:12px}.method-label h3{font-size:28px;line-height:1.2}.method-content .method-lead{font-size:16px}.method-content>p{font-size:12px}.method-final{grid-template-columns:30px minmax(0,1fr);padding:0}.method-result{padding:28px 22px}.method-result h3{font-size:28px;overflow-wrap:break-word}.method-result-intro{font-size:12px;margin-bottom:25px}.method-pillars{grid-template-columns:1fr;gap:22px}.method-pillars h4{margin:8px 0}.studio-heading p{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.method-content summary span{transition:none}}
+
+/* Leitura: texto principal maior e hierarquia legível em todas as telas. */
+.services-page .navbar-nav .nav-link{font-size:15px}
+.studio-bottom{font-size:14px;letter-spacing:.06em}
+.studio-bottom a{font-size:16px}
+.method-guide .eyebrow{font-size:14px;letter-spacing:.1em;line-height:1.6}
+.method-guide .guide-description{font-size:18px;line-height:1.75;max-width:38ch}
+.method-route a{font-size:16px;line-height:1.5}
+.method-route a span{font-size:14px;letter-spacing:.06em;color:#59624f}
+.method-marker{font-size:15px}
+.method-kicker{font-size:14px;letter-spacing:.1em;line-height:1.6;color:#536147}
+.method-content>p{font-size:17px;line-height:1.8;max-width:58ch;color:#505747}
+.method-content .method-lead{font-size:21px;line-height:1.5}
+.method-content summary{font-size:16px;line-height:1.6;padding:15px 0}
+.method-content details p{font-size:17px;line-height:1.8;color:#505747}
+.method-content .method-output{font-size:16px;line-height:1.75;padding:20px 22px}
+.method-output span{font-size:13px;letter-spacing:.08em;color:#4e5e43;margin-bottom:9px}
+.method-result-intro{font-size:18px;line-height:1.75;max-width:58ch}
+.method-pillars span{font-size:13px;letter-spacing:.08em;line-height:1.6;color:#b6c8ad}
+.method-pillars h4{font-size:22px;line-height:1.4}
+.method-pillars p{font-size:16px;line-height:1.75;color:#c5d0c5}
+.method-result-note{font-size:15px;line-height:1.75;color:#bdcbb6}
+.guide-end{font-size:17px;line-height:1.7}
+.services-footer a,.services-footer span{font-size:14px;line-height:1.7}
+.services-footer>a:first-child{font-size:22px}
+@media(max-width:991px){.method-route a{max-width:190px}.method-pillars{grid-template-columns:1fr;gap:25px}}
+@media(max-width:599px){
+ .method-guide .guide-description{font-size:17px}
+ .method-route a{font-size:16px;max-width:none}
+ .method-marker{font-size:14px}
+ .method-kicker{font-size:13px;letter-spacing:.08em}
+ .method-content>p,.method-content details p{font-size:16px;line-height:1.8}
+ .method-content .method-lead{font-size:20px;line-height:1.5}
+ .method-content .method-output{font-size:16px;padding:18px 16px}
+ .method-result-intro{font-size:17px}
+ .method-result h3{font-size:30px;line-height:1.25}
+ .studio-heading p{font-size:18px}
+}
