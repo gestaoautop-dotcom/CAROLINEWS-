@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Seu CSS -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
 
@@ -111,9 +112,103 @@
     </div>
   </section>
 
+  <!-- ================= PORTFOLIO ================= -->
+  <section id="portfolio" class="work-section" aria-labelledby="work-title">
+    <div class="work-container">
+      <header class="work-header">
+        <div><p class="work-eyebrow">Portfólio / Trabalhos selecionados</p>
+          <h2 id="work-title">Ideias que ganham<br><span>forma e função.</span></h2></div>
+        <p class="work-intro">Cada negócio tem uma história. Meu trabalho é transformar essa história em marcas, sites e sistemas que fazem sentido para quem usa.</p>
+      </header>
+      <div class="work-filters" role="group" aria-label="Filtrar projetos">
+        <button type="button" data-work-filter="all" aria-pressed="true">Todos <span>04</span></button>
+        <button type="button" data-work-filter="branding" aria-pressed="false">Branding</button>
+        <button type="button" data-work-filter="sites" aria-pressed="false">Sites</button>
+        <button type="button" data-work-filter="sistemas" aria-pressed="false">Sistemas</button>
+      </div>
+      <p id="work-status" class="work-sr-only" role="status" aria-live="polite">4 projetos exibidos.</p>
+      <div class="work-grid">
+        <article class="work-card" data-work-tags="branding sites">
+          <div class="work-cover work-cover-asi">
+            <span class="work-cover-index">01 / ASI CAPITAL</span>
+            <div class="work-brand"><span class="work-asi-name">ASI <em>Capital</em></span><small>CAPITAL FINANCEIRO ESPECIALIZADO</small></div>
+            <span class="work-cover-note">Estratégia que se torna presença.</span>
+          </div>
+          <div class="work-card-body">
+            <p class="work-category">Branding · Site institucional</p>
+            <h3>ASI Capital</h3>
+            <p>Identidade e presença digital para comunicar confiança, clareza e especialização no mercado financeiro.</p>
+            <details><summary>Conhecer o projeto <span aria-hidden="true">↗</span></summary>
+              <div class="work-detail"><h4>O desafio</h4><p>Apresentar soluções financeiras complexas de forma acessível e consistente com o posicionamento da empresa.</p>
+                <h4>Minha atuação</h4><ul><li>Identidade visual e diretrizes de marca.</li><li>Design e desenvolvimento do site institucional.</li><li>Organização das soluções, conteúdo e experiência em diferentes telas.</li></ul>
+                <a href="https://www.asicapital.com.br/" target="_blank" rel="noopener noreferrer">Visitar site <span aria-hidden="true">↗</span><span class="work-sr-only"> (abre em nova aba)</span></a>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="work-card" data-work-tags="sites sistemas">
+          <div class="work-cover work-cover-auto">
+            <span class="work-cover-index">02 / AUTOPERFECT CANOAS</span>
+            <div class="work-brand"><span class="work-auto-name">AUTO<span>PERFECT</span></span><small>DO PRIMEIRO CONTATO À GESTÃO.</small></div>
+            <span class="work-cover-note">Uma experiência que continua além do site.</span>
+          </div>
+          <div class="work-card-body">
+            <p class="work-category">Site · Experiência do cliente · Sistema</p>
+            <h3>Autoperfect Canoas</h3>
+            <p>Presença digital e ferramentas para aproximar a escolha dos serviços da rotina de atendimento e gestão.</p>
+            <details><summary>Conhecer o projeto <span aria-hidden="true">↗</span></summary>
+              <div class="work-detail"><h4>O desafio</h4><p>Conectar a apresentação dos serviços automotivos ao pedido do cliente e à organização da operação.</p>
+                <h4>Minha atuação</h4><ul><li>Design e desenvolvimento do site.</li><li>Seleção de serviços e encaminhamento do pedido pelo WhatsApp.</li><li>Desenvolvimento de fluxos para clientes, equipe, agenda e gestão.</li></ul>
+                <p class="work-stage">Case SMEZI #0626AP · Sistema em desenvolvimento.</p>
+                <a href="https://autoperfectcanoas.com.br/" target="_blank" rel="noopener noreferrer">Visitar site <span aria-hidden="true">↗</span><span class="work-sr-only"> (abre em nova aba)</span></a>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="work-card" data-work-tags="branding sites">
+          <div class="work-cover work-cover-zac">
+            <span class="work-cover-index">03 / ZAC ASSESSORIA</span>
+            <div class="work-brand"><span class="work-zac-name">ZAC<span>ASSESSORIA</span></span><small>CONHECIMENTO QUE ABRE CAMINHOS.</small></div>
+            <span class="work-cover-note">Uma ponte entre corretores e seguradora.</span>
+          </div>
+          <div class="work-card-body">
+            <p class="work-category">Marca · Comunicação · Design de site</p>
+            <h3>ZAC Assessoria</h3>
+            <p>Direção visual e comunicação para traduzir experiência no setor de seguros em proximidade e apoio ao corretor.</p>
+            <details><summary>Conhecer o projeto <span aria-hidden="true">↗</span></summary>
+              <div class="work-detail"><h4>O desafio</h4><p>Tornar claro o papel da assessoria como ponte entre o corretor e a seguradora, valorizando conhecimento, atenção e oportunidades.</p>
+                <h4>Minha atuação</h4><ul><li>Diretrizes visuais e linguagem da marca.</li><li>Design de site e organização da mensagem institucional.</li><li>Planejamento e criação de conteúdo para redes sociais.</li></ul>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="work-card" data-work-tags="branding sites sistemas">
+          <div class="work-cover work-cover-smezi">
+            <span class="work-cover-index">04 / PROJETO AUTORAL</span>
+            <div class="work-brand"><span class="work-smezi-name">SMEZI<span aria-hidden="true">.</span></span><small>SMART SYSTEMS. MADE EASY.</small></div>
+            <span class="work-cover-note">A tecnologia se adapta ao negócio.</span>
+          </div>
+          <div class="work-card-body">
+            <p class="work-category">Estratégia · Branding · Software</p>
+            <h3>SMEZI</h3>
+            <p>Minha marca de sistemas sob medida: conectar presença digital, operação e criação em experiências mais simples.</p>
+            <details><summary>Conhecer o projeto <span aria-hidden="true">↗</span></summary>
+              <div class="work-detail"><h4>A ideia</h4><p>Partir da operação real de cada empresa para criar ferramentas que acompanhem a sua forma de trabalhar.</p>
+                <h4>Minha atuação</h4><ul><li>Conceito, posicionamento e identidade visual.</li><li>Design da experiência e desenvolvimento de site e plataforma.</li><li>Fluxos de clientes, projetos, propostas e gestão.</li><li>Brand Studio: criação orientada pelas diretrizes de cada marca.</li></ul>
+                <p class="work-stage">Projeto autoral · Plataforma em desenvolvimento.</p>
+              </div>
+            </details>
+          </div>
+        </article>
+      </div>
+      <p class="work-endnote">Estratégia, design e tecnologia. Do primeiro porquê ao último detalhe.</p>
+    </div>
+  </section>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Seu JS -->
   <script src="script.js"></script>
+  <script src="portfolio.js"></script>
 </body>
 </html>
