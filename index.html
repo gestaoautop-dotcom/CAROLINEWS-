@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="portfolio.css">
   <link rel="stylesheet" href="language.css">
+  <link rel="stylesheet" href="dev-background.css">
 </head>
 <body>
 
@@ -69,6 +70,54 @@
 
   <!-- ================= HERO / HOME ================= -->
   <section class="home" id="home">
+    <div class="dev-backdrop" aria-hidden="true" data-language-ignore>
+      <div class="dev-editor">
+        <div class="dev-editor-top"><span class="dev-window-dots"><i></i><i></i><i></i></span><span>caroline / workspace</span><span class="dev-editor-branch">main</span></div>
+        <div class="dev-editor-body">
+          <div class="dev-explorer"><span class="dev-explorer-label">EXPLORER</span><div>⌄ &nbsp; workspace</div><div class="dev-file-indent">⌄ &nbsp; src</div><div class="dev-file-indent dev-file-active">&nbsp; &nbsp; workspace.tsx</div><div class="dev-file-indent">&nbsp; &nbsp; identity.ts</div><div class="dev-file-indent">&nbsp; &nbsp; experience.css</div><div>⌄ &nbsp; components</div><div class="dev-file-indent">&nbsp; &nbsp; Brand.tsx</div><div class="dev-file-indent">&nbsp; &nbsp; Dashboard.tsx</div><div class="dev-file-indent">&nbsp; &nbsp; Workflow.tsx</div><div>&nbsp; &nbsp; package.json</div></div>
+          <div class="dev-editor-source">
+            <div class="dev-file-tab"><span>TSX</span> workspace.tsx <b>×</b></div>
+            <div class="dev-breadcrumb">src &nbsp; / &nbsp; workspace.tsx &nbsp; / &nbsp; Workspace</div>
+            <ol class="dev-code">
+              <li><code><span class="dev-purple">import</span> { useMemo } <span class="dev-purple">from</span> <span class="dev-green">"react"</span>;</code></li>
+              <li><code> </code></li>
+              <li><code><span class="dev-purple">type</span> <span class="dev-yellow">Module</span> = <span class="dev-green">"clients"</span> | <span class="dev-green">"scheduling"</span> | <span class="dev-green">"projects"</span>;</code></li>
+              <li><code><span class="dev-purple">type</span> <span class="dev-yellow">Business</span> = {</code></li>
+              <li><code>  brand: <span class="dev-yellow">string</span>;</code></li>
+              <li><code>  purpose: <span class="dev-yellow">string</span>;</code></li>
+              <li><code>  modules: <span class="dev-yellow">Module</span>[];</code></li>
+              <li><code>};</code></li>
+              <li><code> </code></li>
+              <li><code><span class="dev-comment">// Start with the business. Build around its people.</span></code></li>
+              <li><code><span class="dev-purple">const</span> business: <span class="dev-yellow">Business</span> = {</code></li>
+              <li><code>  brand: <span class="dev-green">"Your identity"</span>,</code></li>
+              <li><code>  purpose: <span class="dev-green">"Make the everyday work better"</span>,</code></li>
+              <li><code>  modules: [<span class="dev-green">"clients"</span>, <span class="dev-green">"scheduling"</span>, <span class="dev-green">"projects"</span>],</code></li>
+              <li><code>};</code></li>
+              <li><code> </code></li>
+              <li><code><span class="dev-purple">export default function</span> <span class="dev-blue">Workspace</span>() {</code></li>
+              <li><code>  <span class="dev-purple">const</span> modules = <span class="dev-blue">useMemo</span>(() =&gt; business.modules, []);</code></li>
+              <li><code> </code></li>
+              <li class="dev-current-line"><code>  <span class="dev-purple">return</span> (</code></li>
+              <li><code>    &lt;<span class="dev-red">main</span> <span class="dev-yellow">className</span>=<span class="dev-green">"custom-experience"</span>&gt;</code></li>
+              <li><code>      &lt;<span class="dev-red">header</span>&gt;{business.brand}&lt;/<span class="dev-red">header</span>&gt;</code></li>
+              <li><code>      &lt;<span class="dev-red">p</span>&gt;{business.purpose}&lt;/<span class="dev-red">p</span>&gt;</code></li>
+              <li><code>      &lt;<span class="dev-red">nav</span>&gt;</code></li>
+              <li><code>        {modules.<span class="dev-blue">map</span>((module) =&gt; (</code></li>
+              <li><code>          &lt;<span class="dev-red">a</span> <span class="dev-yellow">key</span>={module} <span class="dev-yellow">href</span>={<span class="dev-green">`/${module}`</span>}&gt;</code></li>
+              <li><code>            {module}</code></li>
+              <li><code>          &lt;/<span class="dev-red">a</span>&gt;</code></li>
+              <li><code>        ))}</code></li>
+              <li><code>      &lt;/<span class="dev-red">nav</span>&gt;</code></li>
+              <li><code>    &lt;/<span class="dev-red">main</span>&gt;</code></li>
+              <li><code>  );</code></li>
+              <li><code>}</code></li>
+            </ol>
+          </div>
+        </div>
+        <div class="dev-editor-status"><span>⎇ main &nbsp; ✓</span><span>TypeScript React &nbsp; UTF-8 &nbsp; Ln 20, Col 11</span></div>
+      </div>
+    </div>
     <div class="home-overlay"></div>
 
     <div class="container">

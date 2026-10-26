@@ -1,0 +1,34 @@
+/* Decorative code editor behind the original home content. */
+#home.home{background:#0b1016;overflow:hidden;isolation:isolate}
+.dev-backdrop{position:absolute;inset:0;z-index:0;pointer-events:none;user-select:none;overflow:hidden;font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;color:#a9b8ca;text-align:left}
+.dev-editor{position:absolute;inset:90px 3vw 28px;display:flex;flex-direction:column;background:#111821;border:1px solid #283440;border-radius:10px;box-shadow:0 24px 80px #0007;opacity:.9;overflow:hidden}
+.dev-editor-top{display:flex;align-items:center;justify-content:space-between;gap:18px;height:42px;flex:none;padding:0 18px;background:#19212c;border-bottom:1px solid #2d3745;font-size:12px;letter-spacing:.02em;color:#8594a7}
+.dev-window-dots{display:flex;gap:7px;min-width:58px}.dev-window-dots i{display:block;width:8px;height:8px;border-radius:50%;background:#cc6c6d}.dev-window-dots i:nth-child(2){background:#c1ac68}.dev-window-dots i:nth-child(3){background:#6b9d85}
+.dev-editor-branch{min-width:58px;text-align:right;color:#7fa6bb}
+.dev-editor-body{display:flex;min-height:0;flex:1;overflow:hidden}
+.dev-explorer{width:190px;flex:none;padding:20px 0;background:#101720;border-right:1px solid #26313f;font-size:12px;line-height:2.5;color:#8899ab}
+.dev-explorer-label{display:block;padding:0 20px 15px;font-size:10px;letter-spacing:.1em;color:#6e7f93}
+.dev-explorer>div{padding:0 15px;white-space:nowrap}.dev-explorer .dev-file-indent{padding-left:25px}.dev-explorer .dev-file-active{background:#223041;color:#9dbacb}
+.dev-editor-source{min-width:0;flex:1;overflow:hidden;background:linear-gradient(110deg,#121b25,#10171f)}
+.dev-file-tab{height:42px;border-bottom:1px solid #2a3541;background:#18222d;display:flex;align-items:center;gap:10px;padding:0 22px;font-size:12px;color:#a4b2c4;max-width:230px}
+.dev-file-tab>span{font-size:10px;color:#6eacc6}.dev-file-tab b{margin-left:auto;font-size:16px;font-weight:400;color:#788da4}
+.dev-breadcrumb{font-size:11px;color:#6e8094;padding:12px 25px;white-space:nowrap}
+.dev-code{list-style:none;counter-reset:dev-line;padding:0 0 30px;margin:0;min-width:max-content}
+.dev-code li{position:relative;counter-increment:dev-line;min-height:27px;padding:0 25px 0 65px;font-size:clamp(12px,1.12vw,16px);line-height:27px;letter-spacing:0}
+.dev-code li::before{content:counter(dev-line);position:absolute;left:14px;width:27px;text-align:right;color:#536379;font-size:12px}
+.dev-code code{font:inherit;white-space:pre;color:#abb9cd;background:none;padding:0}
+.dev-code .dev-purple{color:#c291d2}.dev-code .dev-green{color:#9dc28d}.dev-code .dev-yellow{color:#d1b986}.dev-code .dev-blue{color:#79b7d4}.dev-code .dev-red{color:#d58c8c}.dev-code .dev-comment{color:#69866a;font-style:italic}
+.dev-current-line{background:#25364b55;border-left:1px solid #6a95b266}
+.dev-current-line code::after{content:'';display:inline-block;width:2px;height:1em;background:#9cc5df;vertical-align:-.12em;margin-left:3px;animation:dev-caret 1.3s steps(1) infinite}
+.dev-editor-status{display:flex;align-items:center;justify-content:space-between;gap:20px;height:25px;flex:none;background:#1b3444;color:#8eabba;padding:0 15px;font-size:10px;white-space:nowrap}
+#home .home-overlay{z-index:1;background:radial-gradient(ellipse at 50% 53%,rgba(8,13,18,.96) 0%,rgba(8,13,18,.86) 24%,rgba(8,13,18,.56) 48%,rgba(8,13,18,.22) 100%),linear-gradient(180deg,#0b10164d 0%,transparent 30%,transparent 75%,#0b1016d9 100%)}
+#home .home-content{text-shadow:0 2px 18px #0009}
+@keyframes dev-caret{50%{opacity:0}}
+@media(max-width:767px){
+ .dev-editor{inset:85px -48% 24px -13%;border-radius:7px;opacity:.88}
+ .dev-explorer{display:none}.dev-editor-top{height:35px;padding:0 13px;font-size:11px}.dev-file-tab{height:35px;font-size:11px}.dev-breadcrumb{font-size:10px;padding:12px 18px}
+ .dev-code li{font-size:13px;line-height:29px;min-height:29px;padding-left:52px}.dev-code li::before{left:8px;font-size:11px}
+ .dev-editor-status{font-size:9px;padding-left:55px}.dev-window-dots{gap:5px}.dev-window-dots i{width:6px;height:6px}
+ #home .home-overlay{background:radial-gradient(ellipse at 50% 54%,rgba(8,13,18,.98) 0%,rgba(8,13,18,.91) 24%,rgba(8,13,18,.6) 48%,rgba(8,13,18,.26) 100%),linear-gradient(180deg,#0b101633,transparent 35%,#0b101680)}
+}
+@media(prefers-reduced-motion:reduce){.dev-current-line code::after{animation:none}}
