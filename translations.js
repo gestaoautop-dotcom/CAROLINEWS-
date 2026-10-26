@@ -190,7 +190,26 @@
     ['Etapa 4: necessidades', 'Step 4: business needs'], ['Etapa 5: integração', 'Step 5: integration'],
     ['Etapas do meu método', 'Steps in my process'], ['CWS — página inicial', 'CWS — home page'],
     ['Idioma', 'Language'], ['Idioma do dispositivo', 'Device language'],
-    ['Necessidades do negócio', 'Business needs']
+    ['Necessidades do negócio', 'Business needs'],
+    ['MENOS ATRITO. MAIS ESPAÇO PARA CRESCER.', 'LESS FRICTION. MORE ROOM TO GROW.'],
+    ['O que está travando', "What's holding"], ['seu negócio', 'your business'], ['hoje?', 'back?'],
+    ['Uma marca que já não representa você. Um site que não mostra seu valor. Uma rotina sustentada por improvisos.', 'A brand that no longer fits. A website that misses the point. A routine held together by workarounds.'],
+    ['Escolha o que parece familiar. Vamos encontrar uma forma melhor de fazer funcionar.', "Pick what sounds familiar. Let's find a better way to make it work."],
+    ['Ferramentas desconectadas', 'Scattered tools'], ['Um fluxo de trabalho conectado.', 'One connected workflow.'],
+    ['Um sistema personalizado que conecta as informações, as pessoas e as tarefas do seu negócio em um só fluxo.', 'A custom system that brings the information, people and tasks your business needs into one flow.'],
+    ['Posicionamento pouco claro', 'Unclear positioning'], ['Um motivo para escolher sua marca.', 'A reason to choose your brand.'],
+    ['Posicionamento claro, identidade própria e uma mensagem que ajuda os clientes certos a entenderem seu valor.', 'Clear positioning, a distinctive identity and a message that helps the right customers understand your value.'],
+    ['Trabalho manual', 'Manual work'], ['Um caminho melhor para as tarefas repetitivas.', 'Give repetitive work a better route.'],
+    ['Automações com propósito e fluxos personalizados para as tarefas que sua equipe repete todos os dias.', 'Purposeful automations and custom workflows built around the tasks your team repeats every day.'],
+    ['Contatos perdidos', 'Lost leads'], ['Um caminho claro do interesse ao contato.', 'A clearer path from interest to contact.'],
+    ['Um site com mensagem clara, chamadas úteis e um fluxo de contato pensado para os seus clientes.', 'A website with clear messaging, useful calls to action and an inquiry flow designed around your customers.'],
+    ['Site desatualizado', 'Outdated website'], ['Um site para o negócio que você tem hoje.', 'A website for the business you are now.'],
+    ['Uma experiência digital personalizada que reflete sua identidade, apresenta sua oferta e funciona em diferentes telas.', 'A custom digital experience that reflects your identity, communicates your offer and works across screens.'],
+    ['Retrabalho constante', 'Constant rework'], ['Direção compartilhada. Menos pontas soltas.', 'Shared direction. Fewer loose ends.'],
+    ['Diretrizes de marca, informações organizadas e processos conectados para ajudar sua equipe a trabalhar na mesma direção.', 'Brand guidelines, organized information and connected processes that help your team work with a consistent direction.'],
+    ['Escolha uma dor. Veja o próximo movimento.', 'Choose a challenge. Watch the next move.'],
+    ['Pausar animação', 'Pause animation'], ['Retomar animação', 'Resume animation'], ['Movimento reduzido', 'Reduced motion'],
+    ['Escolha um desafio do negócio', 'Choose a business challenge'], ['Desafios do negócio', 'Business challenges']
   ];
   if (typeof module !== 'undefined' && module.exports) module.exports = pairs;
   else root.CWSCopy = pairs;
