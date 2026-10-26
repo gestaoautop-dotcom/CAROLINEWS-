@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mudra | Portfolio</title>
+  <title>Caroline W. S. | Brand, Websites &amp; Custom Software</title>
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,6 +16,7 @@
   <!-- Seu CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="language.css">
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
-              aria-expanded="false" aria-label="Abrir menu">
+              aria-expanded="false" aria-label="Open menu">
         <i class="fa-solid fa-bars"></i>
       </button>
 
@@ -55,6 +56,14 @@
           </li>
         </ul>
       </div>
+      <div class="language-control">
+        <label class="language-label" for="site-language">Language</label>
+        <select id="site-language" aria-label="Language">
+          <option value="auto">Device language</option>
+          <option value="en">English</option>
+          <option value="pt">Português</option>
+        </select>
+      </div>
     </div>
   </nav>
 
@@ -67,7 +76,7 @@
         <h5 class="home-subtitle">Hello &amp; Welcome</h5>
 
         <h1 class="home-title">
-          Sou <strong><span id="typed-text"></span></strong><span class="cursor" aria-hidden="true"></span>
+          I'm <strong><span id="typed-text"></span></strong><span class="cursor" aria-hidden="true"></span>
         </h1>
 
         <ul class="social-list list-inline">
@@ -83,7 +92,7 @@
     </div>
 
     <!-- Indicador de scroll (mouse) -->
-    <a href="#about" class="scroll-down" aria-label="Rolar para a próxima seção">
+    <a href="#about" class="scroll-down" aria-label="Scroll to the next section">
       <span class="mouse"><span class="wheel"></span></span>
     </a>
   </section>
@@ -92,22 +101,22 @@
   <section id="about" class="about-showcase" aria-labelledby="about-title">
     <div class="about-layout">
       <div class="about-identity">
-        <p class="about-eyebrow">Sobre mim</p>
+        <p class="about-eyebrow">About me</p>
         <h2 id="about-title">Caroline W. S.</h2>
-        <p class="about-roles">Desenvolvedora de Software <span aria-hidden="true">/</span><br>
-          Especialista em IA para Negócios <span aria-hidden="true">/</span><br>
+        <p class="about-roles">Software Developer <span aria-hidden="true">/</span><br>
+          AI for Business Specialist <span aria-hidden="true">/</span><br>
           UX Designer</p>
       </div>
       <figure class="about-portrait">
         <!-- Foto independente do texto: substitua o arquivo para atualizar. -->
         <img src="img/caroline-about-verified.webp" width="880" height="420"
-             alt="Caroline W. S. em um evento profissional" loading="lazy" decoding="async">
+             alt="Caroline W. S. at a professional event" loading="lazy" decoding="async">
       </figure>
       <div class="about-offer">
-        <p class="about-eyebrow">Marca + tecnologia + direcionamento</p>
-        <h3>Soluções que transformam a forma como sua marca é <strong>vista e lembrada</strong> pelos seus clientes.</h3>
-        <p class="about-description">Desenvolvo sites, sistemas e experiências digitais que conectam marca, tecnologia e as necessidades reais de cada negócio.</p>
-        <a class="about-cta" href="services.html">Vamos transformar sua presença digital <span aria-hidden="true">↗</span></a>
+        <p class="about-eyebrow">Brand + technology + direction</p>
+        <h3>Solutions that change how your brand is <strong>seen and remembered</strong> by your customers.</h3>
+        <p class="about-description">I build websites, software and digital experiences that connect your brand, technology and the real needs of your business.</p>
+        <a class="about-cta" href="services.html">Let's transform your digital presence <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
@@ -116,32 +125,32 @@
   <section id="portfolio" class="work-section" aria-labelledby="work-title">
     <div class="work-container">
       <header class="work-header">
-        <div><p class="work-eyebrow">Portfólio / Trabalhos selecionados</p>
-          <h2 id="work-title">Ideias que ganham<br><span>forma e função.</span></h2></div>
-        <p class="work-intro">Cada negócio tem uma história. Meu trabalho é transformar essa história em marcas, sites e sistemas que fazem sentido para quem usa.</p>
+        <div><p class="work-eyebrow">Portfolio / Selected work</p>
+          <h2 id="work-title">Ideas with<br><span>form and purpose.</span></h2></div>
+        <p class="work-intro">Every business has a story. I turn that story into brands, websites and software built around the people who use them.</p>
       </header>
-      <div class="work-filters" role="group" aria-label="Filtrar projetos">
-        <button type="button" data-work-filter="all" aria-pressed="true">Todos <span>04</span></button>
+      <div class="work-filters" role="group" aria-label="Filter projects">
+        <button type="button" data-work-filter="all" aria-pressed="true">All <span>04</span></button>
         <button type="button" data-work-filter="branding" aria-pressed="false">Branding</button>
-        <button type="button" data-work-filter="sites" aria-pressed="false">Sites</button>
-        <button type="button" data-work-filter="sistemas" aria-pressed="false">Sistemas</button>
+        <button type="button" data-work-filter="sites" aria-pressed="false">Websites</button>
+        <button type="button" data-work-filter="sistemas" aria-pressed="false">Software</button>
       </div>
-      <p id="work-status" class="work-sr-only" role="status" aria-live="polite">4 projetos exibidos.</p>
+      <p id="work-status" class="work-sr-only" role="status" aria-live="polite">4 projects shown.</p>
       <div class="work-grid">
         <article class="work-card" data-work-tags="branding sites">
           <div class="work-cover work-cover-asi">
             <span class="work-cover-index">01 / ASI CAPITAL</span>
-            <div class="work-brand"><span class="work-asi-name">ASI <em>Capital</em></span><small>CAPITAL FINANCEIRO ESPECIALIZADO</small></div>
-            <span class="work-cover-note">Estratégia que se torna presença.</span>
+            <div class="work-brand"><span class="work-asi-name">ASI <em>Capital</em></span><small>SPECIALIZED FINANCIAL CAPITAL</small></div>
+            <span class="work-cover-note">Strategy made visible.</span>
           </div>
           <div class="work-card-body">
-            <p class="work-category">Branding · Site institucional</p>
+            <p class="work-category">Branding · Corporate website</p>
             <h3>ASI Capital</h3>
-            <p>Identidade e presença digital para comunicar confiança, clareza e especialização no mercado financeiro.</p>
-            <details><summary>Conhecer o projeto <span aria-hidden="true">↗</span></summary>
-              <div class="work-detail"><h4>O desafio</h4><p>Apresentar soluções financeiras complexas de forma acessível e consistente com o posicionamento da empresa.</p>
-                <h4>Minha atuação</h4><ul><li>Identidade visual e diretrizes de marca.</li><li>Design e desenvolvimento do site institucional.</li><li>Organização das soluções, conteúdo e experiência em diferentes telas.</li></ul>
-                <a href="https://www.asicapital.com.br/" target="_blank" rel="noopener noreferrer">Visitar site <span aria-hidden="true">↗</span><span class="work-sr-only"> (abre em nova aba)</span></a>
+            <p>A brand identity and digital presence that communicate trust, clarity and financial expertise.</p>
+            <details><summary>Explore the project <span aria-hidden="true">↗</span></summary>
+              <div class="work-detail"><h4>The challenge</h4><p>Make complex financial solutions easy to understand while staying true to the company's positioning.</p>
+                <h4>My role</h4><ul><li>Visual identity and brand guidelines.</li><li>Corporate website design and development.</li><li>Service architecture, content and experience across screen sizes.</li></ul>
+                <a href="https://www.asicapital.com.br/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="work-sr-only"> (opens in a new tab)</span></a>
               </div>
             </details>
           </div>
@@ -149,18 +158,18 @@
         <article class="work-card" data-work-tags="sites sistemas">
           <div class="work-cover work-cover-auto">
             <span class="work-cover-index">02 / AUTOPERFECT CANOAS</span>
-            <div class="work-brand"><span class="work-auto-name">AUTO<span>PERFECT</span></span><small>DO PRIMEIRO CONTATO À GESTÃO.</small></div>
-            <span class="work-cover-note">Uma experiência que continua além do site.</span>
+            <div class="work-brand"><span class="work-auto-name">AUTO<span>PERFECT</span></span><small>FROM FIRST CONTACT TO DAILY OPERATIONS.</small></div>
+            <span class="work-cover-note">An experience that goes beyond the website.</span>
           </div>
           <div class="work-card-body">
-            <p class="work-category">Site · Experiência do cliente · Sistema</p>
+            <p class="work-category">Website · Customer experience · Software</p>
             <h3>Autoperfect Canoas</h3>
-            <p>Presença digital e ferramentas para aproximar a escolha dos serviços da rotina de atendimento e gestão.</p>
-            <details><summary>Conhecer o projeto <span aria-hidden="true">↗</span></summary>
-              <div class="work-detail"><h4>O desafio</h4><p>Conectar a apresentação dos serviços automotivos ao pedido do cliente e à organização da operação.</p>
-                <h4>Minha atuação</h4><ul><li>Design e desenvolvimento do site.</li><li>Seleção de serviços e encaminhamento do pedido pelo WhatsApp.</li><li>Desenvolvimento de fluxos para clientes, equipe, agenda e gestão.</li></ul>
-                <p class="work-stage">Case SMEZI #0626AP · Sistema em desenvolvimento.</p>
-                <a href="https://autoperfectcanoas.com.br/" target="_blank" rel="noopener noreferrer">Visitar site <span aria-hidden="true">↗</span><span class="work-sr-only"> (abre em nova aba)</span></a>
+            <p>A digital presence and tools that connect service selection with customer care and daily operations.</p>
+            <details><summary>Explore the project <span aria-hidden="true">↗</span></summary>
+              <div class="work-detail"><h4>The challenge</h4><p>Connect automotive services, customer orders and the way the business runs.</p>
+                <h4>My role</h4><ul><li>Website design and development.</li><li>Service selection and order handoff through WhatsApp.</li><li>Workflows for customers, staff, scheduling and management.</li></ul>
+                <p class="work-stage">SMEZI case #0626AP · Software in development.</p>
+                <a href="https://autoperfectcanoas.com.br/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="work-sr-only"> (opens in a new tab)</span></a>
               </div>
             </details>
           </div>
@@ -168,46 +177,48 @@
         <article class="work-card" data-work-tags="branding sites">
           <div class="work-cover work-cover-zac">
             <span class="work-cover-index">03 / ZAC ASSESSORIA</span>
-            <div class="work-brand"><span class="work-zac-name">ZAC<span>ASSESSORIA</span></span><small>CONHECIMENTO QUE ABRE CAMINHOS.</small></div>
-            <span class="work-cover-note">Uma ponte entre corretores e seguradora.</span>
+            <div class="work-brand"><span class="work-zac-name">ZAC<span>ASSESSORIA</span></span><small>EXPERTISE THAT OPENS DOORS.</small></div>
+            <span class="work-cover-note">A bridge between brokers and the insurer.</span>
           </div>
           <div class="work-card-body">
-            <p class="work-category">Marca · Comunicação · Design de site</p>
+            <p class="work-category">Brand · Communication · Website design</p>
             <h3>ZAC Assessoria</h3>
-            <p>Direção visual e comunicação para traduzir experiência no setor de seguros em proximidade e apoio ao corretor.</p>
-            <details><summary>Conhecer o projeto <span aria-hidden="true">↗</span></summary>
-              <div class="work-detail"><h4>O desafio</h4><p>Tornar claro o papel da assessoria como ponte entre o corretor e a seguradora, valorizando conhecimento, atenção e oportunidades.</p>
-                <h4>Minha atuação</h4><ul><li>Diretrizes visuais e linguagem da marca.</li><li>Design de site e organização da mensagem institucional.</li><li>Planejamento e criação de conteúdo para redes sociais.</li></ul>
+            <p>Visual direction and communication that turn insurance expertise into clear, approachable support for brokers.</p>
+            <details><summary>Explore the project <span aria-hidden="true">↗</span></summary>
+              <div class="work-detail"><h4>The challenge</h4><p>Clarify the advisory team's role as a bridge between brokers and the insurer, highlighting expertise, care and opportunity.</p>
+                <h4>My role</h4><ul><li>Visual guidelines and brand voice.</li><li>Website design and corporate messaging.</li><li>Social media content planning and creation.</li></ul>
               </div>
             </details>
           </div>
         </article>
         <article class="work-card" data-work-tags="branding sites sistemas">
           <div class="work-cover work-cover-smezi">
-            <span class="work-cover-index">04 / PROJETO AUTORAL</span>
+            <span class="work-cover-index">04 / INDEPENDENT PROJECT</span>
             <div class="work-brand"><span class="work-smezi-name">SMEZI<span aria-hidden="true">.</span></span><small>SMART SYSTEMS. MADE EASY.</small></div>
-            <span class="work-cover-note">A tecnologia se adapta ao negócio.</span>
+            <span class="work-cover-note">Technology shaped around the business.</span>
           </div>
           <div class="work-card-body">
-            <p class="work-category">Estratégia · Branding · Software</p>
+            <p class="work-category">Strategy · Branding · Software</p>
             <h3>SMEZI</h3>
-            <p>Minha marca de sistemas sob medida: conectar presença digital, operação e criação em experiências mais simples.</p>
-            <details><summary>Conhecer o projeto <span aria-hidden="true">↗</span></summary>
-              <div class="work-detail"><h4>A ideia</h4><p>Partir da operação real de cada empresa para criar ferramentas que acompanhem a sua forma de trabalhar.</p>
-                <h4>Minha atuação</h4><ul><li>Conceito, posicionamento e identidade visual.</li><li>Design da experiência e desenvolvimento de site e plataforma.</li><li>Fluxos de clientes, projetos, propostas e gestão.</li><li>Brand Studio: criação orientada pelas diretrizes de cada marca.</li></ul>
-                <p class="work-stage">Projeto autoral · Plataforma em desenvolvimento.</p>
+            <p>My custom software brand: bringing digital presence, operations and creative work together in simpler experiences.</p>
+            <details><summary>Explore the project <span aria-hidden="true">↗</span></summary>
+              <div class="work-detail"><h4>The idea</h4><p>Start with how each company actually works and build tools that fit its processes.</p>
+                <h4>My role</h4><ul><li>Concept, positioning and visual identity.</li><li>Experience design, website and platform development.</li><li>Customer, project, proposal and management workflows.</li><li>Brand Studio: creative work guided by each brand's identity.</li></ul>
+                <p class="work-stage">Independent project · Platform in development.</p>
               </div>
             </details>
           </div>
         </article>
       </div>
-      <p class="work-endnote">Estratégia, design e tecnologia. Do primeiro porquê ao último detalhe.</p>
+      <p class="work-endnote">Strategy, design and technology. From the first why to the final detail.</p>
     </div>
   </section>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Seu JS -->
+  <script src="translations.js"></script>
+  <script src="language.js"></script>
   <script src="script.js"></script>
   <script src="portfolio.js"></script>
 </body>

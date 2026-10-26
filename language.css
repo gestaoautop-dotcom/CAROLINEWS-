@@ -1,0 +1,8 @@
+.language-control{display:flex;align-items:center;flex:none;margin-left:20px;order:3}
+.language-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.language-control select{font:inherit;font-size:12px;line-height:1.5;background:#172022;color:#fff;border:1px solid #738084;border-radius:6px;padding:8px 25px 8px 10px;max-width:160px;min-height:38px;cursor:pointer;color-scheme:dark}
+.language-control select:focus-visible{outline:2px solid #b4d3e7;outline-offset:4px}
+.custom-nav .navbar-collapse{order:2}
+@media(min-width:992px){.language-control{margin-left:12px}.language-control select{max-width:145px;font-size:11px}.custom-nav .navbar-nav .nav-link{margin-left:1px;margin-right:1px;padding-left:8px;padding-right:8px}}
+@media(max-width:991.98px){.language-control{order:1;margin-left:auto;margin-right:14px}.custom-nav .navbar-toggler{order:2}.custom-nav .navbar-collapse{order:3;flex-basis:100%}.language-control select{max-width:155px}}
+@media(max-width:380px){.language-control{margin-right:8px}.language-control select{font-size:11px;max-width:142px}}

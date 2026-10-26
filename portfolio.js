@@ -5,6 +5,10 @@
   const buttons = section.querySelectorAll('[data-work-filter]');
   const cards = section.querySelectorAll('[data-work-tags]');
   const status = document.getElementById('work-status');
+  function updateStatus() {
+    const count = Array.from(cards).filter(function (card) { return !card.hidden; }).length;
+    status.textContent = window.CWSLanguage ? window.CWSLanguage.projects(count) : count + ' projects shown.';
+  }
   buttons.forEach(function (button) {
     button.addEventListener('click', function () {
       const filter = button.dataset.workFilter;
@@ -15,7 +19,9 @@
         card.hidden = !show;
         if (show) count++;
       });
-      status.textContent = count + (count === 1 ? ' projeto exibido.' : ' projetos exibidos.');
+      updateStatus();
     });
   });
+  document.addEventListener('cws:languagechange', updateStatus);
+  updateStatus();
 })();

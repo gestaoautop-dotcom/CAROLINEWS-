@@ -61,12 +61,12 @@
     list.replaceChildren();
     selected.forEach(function (button) {
       const row = document.createElement('span');
-      row.append(document.createTextNode(button.dataset.demoModule));
+      row.append(document.createTextNode(window.CWSLanguage ? window.CWSLanguage.t(button.dataset.demoModule) : button.dataset.demoModule));
       const arrow = document.createElement('b');
       arrow.textContent = '↗'; arrow.setAttribute('aria-hidden', 'true'); row.append(arrow); list.append(row);
     });
-    if (!selected.length) { const row = document.createElement('span'); row.textContent = 'Escopo a definir'; list.append(row); }
-    document.getElementById('demo-module-status').textContent = selected.length + (selected.length === 1 ? ' módulo selecionado.' : ' módulos selecionados.');
+    if (!selected.length) { const row = document.createElement('span'); row.textContent = window.CWSLanguage ? window.CWSLanguage.t('Scope to be defined') : 'Scope to be defined'; list.append(row); }
+    document.getElementById('demo-module-status').textContent = window.CWSLanguage ? window.CWSLanguage.modules(selected.length) : selected.length + ' modules selected.';
   }
   moduleButtons.forEach(function (button) {
     button.addEventListener('click', function () {
@@ -78,6 +78,8 @@
   });
   story.classList.add('story-enhanced');
   controls.hidden = false;
+  document.addEventListener('cws:languagechange', renderModules);
+  renderModules();
   show(0);
   window.addEventListener('scroll', scheduleScroll, { passive: true });
   window.addEventListener('resize', scheduleScroll, { passive: true });

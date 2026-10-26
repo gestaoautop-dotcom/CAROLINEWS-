@@ -3,7 +3,10 @@
   const el = document.getElementById("typed-text");
   if (!el) return;
 
-  const words = ["desenvolvedora.", "designer."];
+  function words() {
+    return window.CWSLanguage && window.CWSLanguage.current === 'pt'
+      ? ['desenvolvedora.', 'designer.'] : ['a developer.', 'a designer.'];
+  }
   const typeSpeed = 110;     // ms por letra digitada
   const deleteSpeed = 60;    // ms por letra apagada
   const pauseAfterWord = 1600;
@@ -12,31 +15,38 @@
   let wordIndex = 0;
   let charIndex = 0;
   let deleting = false;
+  let timer;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function later(delay) { timer = setTimeout(tick, delay); }
 
   function tick() {
-    const current = words[wordIndex];
+    const current = words()[wordIndex];
+    if (reducedMotion.matches) { el.textContent = words()[0]; return; }
 
     if (!deleting) {
       charIndex++;
       el.textContent = current.slice(0, charIndex);
       if (charIndex === current.length) {
         deleting = true;
-        return setTimeout(tick, pauseAfterWord);
+        return later(pauseAfterWord);
       }
-      return setTimeout(tick, typeSpeed);
+      return later(typeSpeed);
     }
 
     charIndex--;
     el.textContent = current.slice(0, charIndex);
     if (charIndex === 0) {
       deleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      return setTimeout(tick, pauseBeforeNext);
+      wordIndex = (wordIndex + 1) % words().length;
+      return later(pauseBeforeNext);
     }
-    setTimeout(tick, deleteSpeed);
+    later(deleteSpeed);
   }
 
   tick();
+  document.addEventListener('cws:languagechange', function () {
+    clearTimeout(timer); charIndex = 0; deleting = false; wordIndex = 0; tick();
+  });
 })();
 
 /* ============ NAVBAR: muda ao rolar ============ */
