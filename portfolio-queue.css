@@ -19,3 +19,9 @@
 #portfolio .cwsq-caption{font-size:11px;text-align:center;padding:24px;background:#f8f8f6;color:#555;margin:0 calc(50% - 50vw) 55px}
 @media(max-width:700px){#portfolio .cwsq{height:410vh}#portfolio .cwsq-card{width:87vw;aspect-ratio:1.45}#portfolio .cwsq-head{top:19%}#portfolio .cwsq-head h3{font-size:38px}#portfolio .cwsq-card a span{opacity:1;transform:none}#portfolio .cwsq-bottom{bottom:22px}}
 @media(prefers-reduced-motion:reduce){#portfolio .cwsq{height:auto}#portfolio .cwsq-sticky{height:auto;min-height:auto;overflow:visible;padding:130px 12px 45px;perspective:none}#portfolio .cwsq-head,#portfolio .cwsq-scene,#portfolio .cwsq-card,#portfolio .cwsq-bottom{position:static;transform:none!important;opacity:1!important;visibility:visible!important}#portfolio .cwsq-scene{display:grid;gap:20px}#portfolio .cwsq-card{width:100%}#portfolio .cwsq-bottom{margin-top:25px}#portfolio .cwsq-head{margin:0 auto 32px}}
+
+/* V8: static, faithful homepage screenshots instead of inline videos */
+#portfolio .cwsq-card .cwsq-shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:1;display:block;transform:translateZ(0)}
+#portfolio .cwsq-card .cwsq-fallback{z-index:0}
+#portfolio .cwsq-card .cwsq-tag{z-index:2}
+#portfolio .cwsq-card a{z-index:3}
