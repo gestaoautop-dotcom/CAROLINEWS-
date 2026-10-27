@@ -15,7 +15,4 @@ el.style.transform='translate3d(-50%,calc(-50% + '+y.toFixed(2)+'px),'+z.toFixed
 el.style.opacity=op;el.style.visibility=op<.01?'hidden':'visible';el.style.zIndex=count-i;el.style.pointerEvents=i===active&&op>.4?'auto':'none';
 });output.textContent=String(active+1).padStart(2,'0')+' / '+String(count).padStart(2,'0');bar.style.width=p*100+'%';head.style.opacity=1-clamp(p/.08);}
 function request(){if(!raf)raf=requestAnimationFrame(render)}addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});render();
-const observer=new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>{if(isIntersecting){target.play().catch(()=>{});}else target.pause()}),{rootMargin:'150px 0px',threshold:.01});
-root.querySelectorAll('video').forEach(v=>{observer.observe(v);v.addEventListener('error',()=>{v.style.display='none'})});
-document.addEventListener('visibilitychange',()=>{if(document.hidden)root.querySelectorAll('video').forEach(v=>v.pause())});
 })();
