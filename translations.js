@@ -1,6 +1,9 @@
 /* Reviewed English and Portuguese copy, shared by both pages and interactive UI. */
 (function (root) {
   const pairs = [
+    ['Vamos criar algo','Let\'s make something'],
+    ['funcionar.','work.'],
+
     ['Contato / Vamos conversar', "CONTACT / LET'S CONNECT"],
     ['Vamos fazer algo funcionar.', "Let's make something work."],
     ['Tem um projeto em mente? Vamos conversar sobre o que podemos construir juntos.', 'Have a project in mind? Let\'s discuss what we can build together.'],
