@@ -1,6 +1,12 @@
 /* Reviewed English and Portuguese copy, shared by both pages and interactive UI. */
 (function (root) {
   const pairs = [
+    ['Contato / Vamos conversar', "CONTACT / LET'S CONNECT"],
+    ['Vamos fazer algo funcionar.', "Let's make something work."],
+    ['Tem um projeto em mente? Vamos conversar sobre o que podemos construir juntos.', 'Have a project in mind? Let\'s discuss what we can build together.'],
+    ['Em breve','Coming soon'],
+    ['Redes sociais','Social media'],
+
     ["Serviços / Preços por projeto", "Services / Project-based pricing"],
     ["Feito para o seu", "Built for your"],
     ["próximo passo.", "next move."],
