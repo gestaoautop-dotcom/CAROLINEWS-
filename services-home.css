@@ -11,8 +11,8 @@
 .cws-pricing .cws-plan{background:#161d21;padding:clamp(24px,2.8vw,40px);display:flex;flex-direction:column;min-width:0;transition:background .3s ease}
 .cws-pricing .cws-plan:hover{background:#202a2e}
 .cws-pricing .cws-plan-num{font-size:11px;letter-spacing:.12em;color:#95a69c;display:flex;justify-content:space-between;gap:8px;margin:0 0 45px}
-.cws-pricing .cws-plan-featured{background:#23312b}
-.cws-pricing .cws-plan-featured:hover{background:#293c33}
+.cws-pricing .cws-plan-featured{background:#1d3042}
+.cws-pricing .cws-plan-featured:hover{background:#27425b}
 .cws-pricing .cws-plan-title{font-size:clamp(21px,2.2vw,30px);font-weight:500;letter-spacing:-.055em;margin:0 0 14px;line-height:1.17}
 .cws-pricing .cws-plan-desc{font-size:13px;line-height:1.7;color:#bac5c2;min-height:68px;margin:0}
 .cws-pricing .cws-price-line{border-top:1px solid #3b4545;margin:29px 0 23px;padding-top:23px}
