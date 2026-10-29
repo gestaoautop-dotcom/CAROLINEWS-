@@ -361,3 +361,5 @@ button:focus-visible {
   .about-cta { max-width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { .about-cta { transition: none; } }
+
+.cws-contact{background:#101519;color:#f5f7f4;padding:100px 5vw}.cws-contact-wrap{max-width:1200px;margin:auto}.cws-contact h2{font-size:clamp(40px,6vw,84px);letter-spacing:-.07em;font-weight:500}.cws-contact h2 em{color:#abc1b2;font-style:normal}.cws-contact-kicker{color:#abc1b2;font-size:11px;letter-spacing:.2em}.cws-contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#444;margin-top:40px}.cws-contact-grid>*{padding:28px;background:#192127;color:white;display:flex;flex-direction:column;justify-content:space-between;min-height:160px}.cws-contact-grid small{display:block;color:#abb;margin-top:12px}.cws-contact-grid a:hover{background:#294032}@media(max-width:800px){.cws-contact-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.cws-contact-grid{grid-template-columns:1fr}}
