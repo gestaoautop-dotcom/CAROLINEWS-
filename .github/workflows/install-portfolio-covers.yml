@@ -1,33 +1,58 @@
-name: Install portfolio cover images
+name: Refresh live portfolio screenshots
 on:
   push:
     branches: [main]
     paths:
-      - portfolio_ready_to_install.zip
       - .github/workflows/install-portfolio-covers.yml
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
-  install-covers:
+  capture:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-      - name: Extract only the four portfolio covers
+      - name: Install screenshot browser
         run: |
-          unzip -o portfolio_ready_to_install.zip 'portfolio-covers/*.webp' -d .
-          test -s portfolio-covers/mora-cover.webp
-          test -s portfolio-covers/vista-cover.webp
-          test -s portfolio-covers/irvine-cover.webp
-          test -s portfolio-covers/starbase-cover.webp
-      - name: Commit generated assets
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Capture current project homepages
+        run: |
+          mkdir -p portfolio-covers
+          cat > /tmp/capture-portfolio.cjs <<'JS'
+          const { chromium }=require(process.cwd()+'/node_modules/playwright');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            const sites=[
+              ['mora-cover.webp','https://realestate.carolinew.net/demo'],
+              ['vista-cover.webp','https://healthcare.carolinew.net/'],
+              ['irvine-cover.webp','https://irvine-atlas.carolschimitez491.workers.dev/']
+            ];
+            for(const [file,url] of sites){
+              const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});
+              try{
+                const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:35000});
+                if(!response || response.status()>=400) throw Error('HTTP '+response?.status());
+                await page.waitForTimeout(1800);
+                await page.screenshot({path:'portfolio-covers/'+file,type:'jpeg',quality:86});
+                const fs=require('fs');
+                fs.renameSync('portfolio-covers/'+file,'portfolio-covers/'+file.replace('.webp','.jpg'));
+                console.log('Captured',file,url);
+              }catch(e){console.error('Capture failed:',file,e.message);process.exitCode=1}
+              finally{await page.close()}
+            }
+            await browser.close();
+          })();
+          JS
+          node /tmp/capture-portfolio.cjs
+      - name: Commit live previews
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add portfolio-covers/*.webp
+          git add portfolio-covers/*.jpg
           if ! git diff --cached --quiet; then
-            git commit -m "Install optimized portfolio cover images"
+            git commit -m "Refresh real website portfolio screenshots"
             git push
           fi
