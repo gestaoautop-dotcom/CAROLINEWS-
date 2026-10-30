@@ -7,10 +7,10 @@
     return window.CWSLanguage && window.CWSLanguage.current === 'pt'
       ? ['criativa.', 'entusiasmada.', 'uma artista.'] : ['creative.', 'enthusiastic.', 'an artist.'];
   }
-  const typeSpeed = 110;     // ms por letra digitada
-  const deleteSpeed = 60;    // ms por letra apagada
-  const pauseAfterWord = 1600;
-  const pauseBeforeNext = 400;
+  const typeSpeed = 65;     // ms por letra digitada
+  const deleteSpeed = 35;    // ms por letra apagada
+  const pauseAfterWord = 900;
+  const pauseBeforeNext = 200;
 
   let wordIndex = 0;
   let charIndex = 0;
