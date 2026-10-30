@@ -144,3 +144,37 @@
   z-index:1!important;
 }
 #portfolio .work-grid .portfolio-preview-card:hover img{transform:none!important}
+
+/* MORA reference-matched cover: editable, responsive HTML instead of a screenshot with baked-in controls. */
+#portfolio .work-grid a.mora-album-preview{
+  display:block!important;position:relative!important;isolation:isolate;
+  width:100%!important;aspect-ratio:1.94!important;height:auto!important;
+  background:linear-gradient(112deg,#3d8bc9,#85bce5 72%,#b8d7f1)!important;
+  border-radius:12px!important;overflow:hidden!important;line-height:1.4!important;
+  color:#fff!important;font-family:Arial,Helvetica,sans-serif!important;
+}
+#portfolio a.mora-album-preview::before,#portfolio a.mora-album-preview::after{display:none!important}
+#portfolio .mora-album-preview-photo{position:absolute;inset:27% 0 0;z-index:0;background:url("https://realestate.carolinew.net/assets/casa-horizonte.webp") center 52% / cover no-repeat;mask-image:linear-gradient(to bottom,transparent,#000 24%);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%)}
+#portfolio .mora-album-preview-nav{position:absolute;z-index:2;inset:0 0 auto;height:18%;display:flex;align-items:center;justify-content:space-between;padding:1.5% 5%;color:#112538;background:#a6d0ee66;font-size:clamp(5px,.47vw,9px)}
+#portfolio .mora-album-preview-logo{font-size:clamp(13px,1.5vw,26px);font-weight:400;letter-spacing:.23em;line-height:1}
+#portfolio .mora-album-preview-logo small{display:block;font-size:clamp(3px,.4vw,6px);text-align:center;letter-spacing:.3em;margin-top:3px}
+#portfolio .mora-album-preview-top-button,#portfolio .mora-album-preview-button{background:#142330;border-radius:3px;color:#fff}
+#portfolio .mora-album-preview-top-button{padding:1.4% 2.2%;font-size:clamp(5px,.5vw,10px)}
+#portfolio .mora-album-preview-body{position:absolute;z-index:2;left:6%;top:22%;display:flex;flex-direction:column;align-items:start;gap:2%;width:55%}
+#portfolio .mora-album-preview-kicker{font-size:clamp(5px,.43vw,9px);letter-spacing:.18em;font-weight:600;margin-bottom:2%}
+#portfolio .mora-album-preview-title{font-size:clamp(20px,2.55vw,49px);line-height:1.05;letter-spacing:-.045em;font-weight:400;margin-bottom:2%;text-shadow:0 1px 8px #19426b15}
+#portfolio .mora-album-preview-description{font-size:clamp(5px,.62vw,11px);line-height:1.5;color:#f7fbff;margin-bottom:4%}
+#portfolio .mora-album-preview-button{font-size:clamp(6px,.58vw,10px);padding:2.5% 5%}
+#portfolio .mora-album-preview-stats{position:absolute;z-index:2;left:3%;right:3%;bottom:0;height:15%;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;background:#f9f9f7;color:#142233;border-radius:6px 6px 0 0}
+#portfolio .mora-album-preview-stats>span{display:flex;flex-direction:column;align-items:center;text-align:center;line-height:1.3;border-right:1px solid #e4e5e6}
+#portfolio .mora-album-preview-stats>span:last-child{border-right:0}
+#portfolio .mora-album-preview-stats b{font-size:clamp(9px,1vw,19px);font-weight:600}
+#portfolio .mora-album-preview-stats small{font-size:clamp(4px,.48vw,9px);color:#8d9399}
+@media(max-width:700px){
+ #portfolio .mora-album-preview-nav-items{display:none}
+ #portfolio .mora-album-preview-title{font-size:clamp(19px,5vw,35px)}
+ #portfolio .mora-album-preview-description{font-size:clamp(5px,1.1vw,9px)}
+ #portfolio .mora-album-preview-kicker{font-size:clamp(5px,1vw,8px)}
+ #portfolio .mora-album-preview-stats b{font-size:clamp(10px,2vw,15px)}
+ #portfolio .mora-album-preview-stats small{font-size:clamp(4px,.9vw,7px)}
+}
