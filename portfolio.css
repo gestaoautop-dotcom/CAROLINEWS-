@@ -65,3 +65,9 @@
 #portfolio .portfolio-cover-link:not(.portfolio-cover-photo)::before{background-image:none}
 #portfolio .portfolio-cover-link .work-cover-index,#portfolio .portfolio-cover-link .work-cover-note,#portfolio .portfolio-cover-link .portfolio-cover-title{display:none!important}
 #portfolio .portfolio-cover-link:hover::before{transform:scale(1.01)!important}
+
+/* Portfolio image restoration — actual IMG, no overlay */
+#portfolio .portfolio-preview-card{display:block!important;position:relative!important;aspect-ratio:16/10!important;background:#14202c!important;padding:0!important;overflow:hidden;border-radius:12px;border:1px solid #ffffff20;text-decoration:none}
+#portfolio .portfolio-preview-card::before{display:none!important;content:none!important}
+#portfolio .portfolio-preview-card img{display:block!important;position:relative!important;z-index:1;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center;background:#111922;opacity:1!important;visibility:visible!important;transform:none!important}
+#portfolio .portfolio-preview-card:hover img{transform:scale(1.012)!important;transition:transform .3s ease}
