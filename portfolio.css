@@ -42,3 +42,10 @@
 .work-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:767px){.work-section{padding-top:72px}.work-header{display:block}.work-intro{margin-top:24px;max-width:100%}.work-grid{grid-template-columns:1fr;gap:30px}.work-cover{padding:25px}.work-header h2{font-size:40px}.work-filters button{padding:10px 15px}.work-cover-index,.work-cover-note{left:22px;right:22px}.work-asi-name{font-size:42px}.work-auto-name{font-size:31px}.work-zac-name{font-size:65px}.work-smezi-name{font-size:60px}}
 @media(prefers-reduced-motion:reduce){.work-section *{transition:none!important}}
+
+/* Clickable portfolio previews */
+#portfolio .portfolio-cover-link{display:flex;color:#fff;text-decoration:none;cursor:pointer;transition:filter .22s ease}
+#portfolio .portfolio-cover-link:hover,#portfolio .portfolio-cover-link:focus-visible{filter:brightness(1.12);color:#fff}
+#portfolio .portfolio-cover-title{font-size:clamp(25px,3.5vw,45px);font-weight:600;text-align:center;letter-spacing:-.05em;line-height:1.1;text-shadow:0 2px 18px #0008}
+#portfolio .portfolio-project-link{display:inline-flex;color:#c8e9db;font-size:13px;text-decoration:none;margin:12px 0 18px;border-bottom:1px solid currentColor;padding-bottom:4px}
+#portfolio .portfolio-project-link:hover{color:#fff}
