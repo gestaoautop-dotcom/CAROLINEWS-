@@ -105,3 +105,42 @@
 #portfolio .work-card:has(a[href="https://healthcare.carolinew.net/"]) .portfolio-preview-card:hover img{
   transform:none!important;
 }
+
+/* Portfolio covers: aligned frames, uncropped screenshots (2026-10-30). */
+#portfolio .work-grid .portfolio-preview-card{
+  display:block!important;
+  position:relative!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:16 / 10!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#0c1118!important;
+}
+#portfolio .work-grid .portfolio-preview-card img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-height:100%!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:transparent!important;
+  transform:none!important;
+}
+/* The new wide VISTA screenshot stays fully visible; its backdrop fills the spare space. */
+#portfolio .work-grid .work-card:has(a[href="https://healthcare.carolinew.net/"]) .portfolio-preview-card::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:-14px;
+  background:url("vista-cover.webp") center / cover no-repeat;
+  filter:blur(18px) brightness(.46);
+  pointer-events:none;
+}
+#portfolio .work-grid .work-card:has(a[href="https://healthcare.carolinew.net/"]) .portfolio-preview-card img{
+  z-index:1!important;
+}
+#portfolio .work-grid .portfolio-preview-card:hover img{transform:none!important}
