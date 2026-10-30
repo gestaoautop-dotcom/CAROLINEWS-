@@ -23,25 +23,25 @@
       const style = document.createElement('style');
       style.id = 'cws-privacy-styles';
       style.textContent = `
-        .cws-privacy-panel{position:fixed;z-index:2147483647;bottom:18px;left:18px;right:18px;max-width:462px;margin:0 auto;padding:24px 26px 22px;box-sizing:border-box;background:#faf8f3;color:#192821;border:1px solid #e9e5db;border-radius:15px;box-shadow:0 18px 55px rgba(0,0,0,.28);font:400 13px/1.6 Montserrat,system-ui,sans-serif;overflow:hidden}
-        .cws-privacy-top{display:grid;grid-template-columns:minmax(0,1fr) 136px;gap:6px;align-items:center;min-height:137px}
-        .cws-privacy-eyebrow{margin:0 0 8px;color:#7b806e;font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
-        .cws-privacy-panel h2{font:600 21px/1.22 Montserrat,system-ui,sans-serif;letter-spacing:-.04em;margin:0 0 9px;color:#17281f}
-        .cws-privacy-copy{margin:0 0 7px;color:#526059;font-size:12px;line-height:1.55}
+        .cws-privacy-panel{position:fixed;z-index:2147483647;bottom:18px;left:18px;right:18px;max-width:390px;margin:0 auto;padding:18px 20px 18px;box-sizing:border-box;background:#faf8f3;color:#192821;border:1px solid #e9e5db;border-radius:12px;box-shadow:0 12px 35px rgba(0,0,0,.22);font:400 13px/1.6 Montserrat,system-ui,sans-serif;overflow:hidden}
+        .cws-privacy-top{display:grid;grid-template-columns:minmax(0,1fr) 94px;gap:8px;align-items:center;min-height:94px}
+        .cws-privacy-eyebrow{margin:0 0 5px;color:#7b806e;font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+        .cws-privacy-panel h2{font:600 18px/1.25 Montserrat,system-ui,sans-serif;letter-spacing:-.04em;margin:0 0 6px;color:#17281f}
+        .cws-privacy-copy{margin:0 0 5px;color:#526059;font-size:11px;line-height:1.55}
         .cws-privacy-panel a{color:#446751;text-decoration:underline;text-underline-offset:3px;font-size:11px}
-        .cws-cookie-scene{height:135px;position:relative;align-self:end;pointer-events:none;transform-origin:80% 95%;animation:cws-hand-in 850ms cubic-bezier(.18,.85,.3,1) both}
-        .cws-cookie-scene svg{display:block;width:155px;height:145px;max-width:none;position:absolute;bottom:-5px;left:-8px;overflow:visible;filter:drop-shadow(0 7px 7px rgba(87,58,32,.14))}
-        .cws-privacy-actions{display:grid;grid-template-columns:1.25fr 1fr;gap:9px;margin-top:14px;animation:cws-actions-in .5s ease .42s both}
-        .cws-privacy-panel button{font:600 12px/1.35 Montserrat,system-ui,sans-serif;cursor:pointer;min-height:43px;border-radius:7px;transition:background-color .2s,transform .2s}
+        .cws-cookie-scene{height:92px;position:relative;align-self:end;pointer-events:none;transform-origin:80% 95%;animation:cws-hand-in 550ms cubic-bezier(.18,.85,.3,1) both}
+        .cws-cookie-scene svg{display:block;width:108px;height:100px;max-width:none;position:absolute;bottom:-3px;left:-5px;overflow:visible;filter:drop-shadow(0 7px 7px rgba(87,58,32,.14))}
+        .cws-privacy-actions{display:grid;grid-template-columns:1.15fr 1fr;gap:8px;margin-top:11px;animation:cws-actions-in .32s ease .25s both}
+        .cws-privacy-panel button{font:600 12px/1.35 Montserrat,system-ui,sans-serif;cursor:pointer;min-height:40px;border-radius:6px;transition:background-color .2s,transform .2s}
         .cws-privacy-accept{background:#28513e;color:white;border:1px solid #28513e}
         .cws-privacy-accept:hover{background:#356a51;transform:translateY(-1px)}
         .cws-privacy-essential{background:transparent;color:#294639;border:1px solid #aabaae}
         .cws-privacy-essential:hover{background:#eff4ee}
         .cws-privacy-x{position:absolute;right:12px;top:10px;width:32px;min-height:32px!important;border:0;background:none;color:#42554a;font-size:22px!important;z-index:1}
         .cws-privacy-panel :focus-visible{outline:3px solid #4e8768;outline-offset:3px}
-        @keyframes cws-hand-in{from{opacity:0;transform:translate(70px,85px) rotate(13deg)}65%{opacity:1}to{opacity:1;transform:translate(0,0) rotate(0)}}
+        @keyframes cws-hand-in{from{opacity:0;transform:translate(36px,35px) rotate(8deg)}65%{opacity:1}to{opacity:1;transform:translate(0,0) rotate(0)}}
         @keyframes cws-actions-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-        @media(max-width:450px){.cws-privacy-panel{left:10px;right:10px;bottom:10px;padding:21px 18px 18px}.cws-privacy-top{grid-template-columns:minmax(0,1fr) 95px;min-height:120px}.cws-cookie-scene{height:113px}.cws-cookie-scene svg{width:120px;height:115px;left:-10px}.cws-privacy-panel h2{font-size:19px}.cws-privacy-copy{font-size:11px}.cws-privacy-actions{grid-template-columns:1fr 1fr}}
+        @media(max-width:450px){.cws-privacy-panel{left:10px;right:10px;bottom:10px;padding:17px 15px}.cws-privacy-top{grid-template-columns:minmax(0,1fr) 72px;min-height:85px}.cws-cookie-scene{height:78px}.cws-cookie-scene svg{width:88px;height:82px;left:-9px}.cws-privacy-panel h2{font-size:17px}.cws-privacy-copy{font-size:11px}.cws-privacy-actions{grid-template-columns:1fr 1fr}}
         @media(prefers-reduced-motion:reduce){.cws-cookie-scene,.cws-privacy-actions{animation:none!important}.cws-privacy-panel button{transition:none!important}.cws-privacy-accept:hover{transform:none}}
       `;
       document.head.appendChild(style);
@@ -57,9 +57,9 @@
       <button class="cws-privacy-x" type="button" data-choice="close" aria-label="Close privacy notice">×</button>
       <div class="cws-privacy-top">
         <div class="cws-privacy-message">
-          <p class="cws-privacy-eyebrow">Privacy & transparency</p>
+          <p class="cws-privacy-eyebrow">PRIVACY</p>
           <h2 id="cws-privacy-title">Your privacy matters.</h2>
-          <p class="cws-privacy-copy" id="cws-privacy-description">Essential preferences keep this site working. Optional cookies are currently off.</p>
+          <p class="cws-privacy-copy" id="cws-privacy-description">Essential preferences only. Optional cookies are off.</p>
           <a href="/privacy.html">Privacy policy</a>
         </div>
         <div class="cws-cookie-scene" aria-hidden="true">
@@ -88,7 +88,7 @@
         </div>
       </div>
       <div class="cws-privacy-actions">
-        <button class="cws-privacy-accept" type="button" data-choice="all">Accept all ↗</button>
+        <button class="cws-privacy-accept" type="button" data-choice="all">Accept all</button>
         <button class="cws-privacy-essential" type="button" data-choice="essential">Essential only</button>
       </div>`;
     panel.querySelectorAll('[data-choice]').forEach(function (button) {
