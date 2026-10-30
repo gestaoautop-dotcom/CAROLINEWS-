@@ -29,8 +29,8 @@
         .cws-privacy-panel h2{font:600 18px/1.25 Montserrat,system-ui,sans-serif;letter-spacing:-.04em;margin:0 0 6px;color:#17281f}
         .cws-privacy-copy{margin:0 0 5px;color:#526059;font-size:11px;line-height:1.55}
         .cws-privacy-panel a{color:#446751;text-decoration:underline;text-underline-offset:3px;font-size:11px}
-        .cws-cookie-scene{height:92px;position:relative;align-self:end;pointer-events:none;transform-origin:80% 95%;animation:cws-hand-in 550ms cubic-bezier(.18,.85,.3,1) both}
-        .cws-cookie-scene svg{display:block;width:108px;height:100px;max-width:none;position:absolute;bottom:-3px;left:-5px;overflow:visible;filter:drop-shadow(0 7px 7px rgba(87,58,32,.14))}
+        .cws-cookie-scene{height:92px;position:relative;align-self:end;pointer-events:none;transform-origin:80% 95%;animation:cws-hand-in 650ms cubic-bezier(.18,.85,.3,1) both}
+        .cws-cookie-scene svg{display:block;width:96px;height:90px;max-width:none;position:absolute;bottom:-3px;left:-5px;overflow:visible;filter:drop-shadow(0 7px 7px rgba(87,58,32,.14))}
         .cws-privacy-actions{display:grid;grid-template-columns:1.15fr 1fr;gap:8px;margin-top:11px;animation:cws-actions-in .32s ease .25s both}
         .cws-privacy-panel button{font:600 12px/1.35 Montserrat,system-ui,sans-serif;cursor:pointer;min-height:40px;border-radius:6px;transition:background-color .2s,transform .2s}
         .cws-privacy-accept{background:#28513e;color:white;border:1px solid #28513e}
@@ -39,9 +39,9 @@
         .cws-privacy-essential:hover{background:#eff4ee}
         .cws-privacy-x{position:absolute;right:12px;top:10px;width:32px;min-height:32px!important;border:0;background:none;color:#42554a;font-size:22px!important;z-index:1}
         .cws-privacy-panel :focus-visible{outline:3px solid #4e8768;outline-offset:3px}
-        @keyframes cws-hand-in{from{opacity:0;transform:translate(36px,35px) rotate(8deg)}65%{opacity:1}to{opacity:1;transform:translate(0,0) rotate(0)}}
+        @keyframes cws-hand-in{from{opacity:0;transform:translate(24px,20px) rotate(4deg)}65%{opacity:1}to{opacity:1;transform:translate(0,0) rotate(0)}}
         @keyframes cws-actions-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-        @media(max-width:450px){.cws-privacy-panel{left:10px;right:10px;bottom:10px;padding:17px 15px}.cws-privacy-top{grid-template-columns:minmax(0,1fr) 72px;min-height:85px}.cws-cookie-scene{height:78px}.cws-cookie-scene svg{width:88px;height:82px;left:-9px}.cws-privacy-panel h2{font-size:17px}.cws-privacy-copy{font-size:11px}.cws-privacy-actions{grid-template-columns:1fr 1fr}}
+        @media(max-width:450px){.cws-privacy-panel{left:10px;right:10px;bottom:10px;padding:17px 15px}.cws-privacy-top{grid-template-columns:minmax(0,1fr) 72px;min-height:85px}.cws-cookie-scene{height:78px}.cws-cookie-scene svg{width:78px;height:74px;left:-9px}.cws-privacy-panel h2{font-size:17px}.cws-privacy-copy{font-size:11px}.cws-privacy-actions{grid-template-columns:1fr 1fr}}
         @media(prefers-reduced-motion:reduce){.cws-cookie-scene,.cws-privacy-actions{animation:none!important}.cws-privacy-panel button{transition:none!important}.cws-privacy-accept:hover{transform:none}}
       `;
       document.head.appendChild(style);
@@ -59,7 +59,7 @@
         <div class="cws-privacy-message">
           <p class="cws-privacy-eyebrow">PRIVACY</p>
           <h2 id="cws-privacy-title">Your privacy matters.</h2>
-          <p class="cws-privacy-copy" id="cws-privacy-description">Essential preferences only. Optional cookies are off.</p>
+          <p class="cws-privacy-copy" id="cws-privacy-description">Essential preferences keep this site working. Optional cookies are off.</p>
           <a href="/privacy.html">Privacy policy</a>
         </div>
         <div class="cws-cookie-scene" aria-hidden="true">
@@ -79,11 +79,9 @@
             <path d="M48 78c7-7 20-5 27-13m11 31c8-2 15-10 22-12m-44 20 8-5" stroke="#ffdc9e" stroke-width="4" stroke-linecap="round" opacity=".6"/>
             <g fill="#66391f"><path d="m57 61 10-5 7 7-5 10-12-2z"/><path d="m89 52 11 0 3 10-10 4-6-7z"/><path d="m111 80 8 2-2 10-9-2z"/><path d="m68 92 12-3 4 9-12 4z"/><path d="m91 76 6-6 7 4-3 9z"/></g>
             <g fill="#88491f" opacity=".72"><circle cx="49" cy="84" r="3"/><circle cx="82" cy="47" r="2.6"/><circle cx="111" cy="67" r="3"/><circle cx="96" cy="99" r="2.5"/><circle cx="58" cy="102" r="2.5"/></g>
-            <g fill="#f9f9f6" stroke="#b9a59a" stroke-width="1.7"><ellipse cx="70" cy="68" rx="12.2" ry="13.4"/><ellipse cx="99" cy="67" rx="12.2" ry="13.4"/></g>
-            <g fill="#25221e"><circle cx="74" cy="70" r="6.5"/><circle cx="102" cy="69" r="6.5"/></g>
-            <g fill="white"><circle cx="72" cy="66" r="2.3"/><circle cx="100" cy="65" r="2.3"/></g>
-            <path d="M78 88q8 8 17-1" fill="none" stroke="#5b3327" stroke-width="2" stroke-linecap="round"/>
-            <path d="m40 49-7-7m86 0 7-7m3 43 8 1" stroke="#af7e50" stroke-width="2.3" stroke-linecap="round" opacity=".8"/>
+            <!-- Natural finish: subtle baked texture, no eyes or cartoon decorations. -->
+            <g fill="#a86c39" opacity=".4"><circle cx="59" cy="82" r="1.4"/><circle cx="82" cy="76" r="1.3"/><circle cx="104" cy="92" r="1.5"/><circle cx="76" cy="104" r="1.1"/><circle cx="106" cy="55" r="1.1"/></g>
+            <path d="M50 79c5-4 10-4 15-5m26 27c6-2 10-5 14-8" stroke="#e8ac64" stroke-width="1.3" opacity=".45" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
