@@ -81,3 +81,8 @@
 #portfolio .portfolio-coming-soon img{opacity:.38!important;filter:grayscale(.5)}
 #portfolio .portfolio-coming-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;color:#fff;font-size:clamp(19px,2.3vw,29px);font-weight:600;letter-spacing:.04em;background:#0a101b55}
 #portfolio .portfolio-disabled{color:#aeb8c7!important;border-bottom:0!important;cursor:default}
+
+/* VISTA portfolio: full homepage cover at its original panoramic aspect ratio. */
+#portfolio .work-card:has(a[href="https://healthcare.carolinew.net/"]) .portfolio-preview-card{aspect-ratio:1918 / 822!important;height:auto!important;overflow:hidden;background:#f8f7f3!important}
+#portfolio .work-card:has(a[href="https://healthcare.carolinew.net/"]) .portfolio-preview-card img{display:block;width:100%!important;height:auto!important;aspect-ratio:1918 / 822!important;object-fit:contain!important;object-position:center!important;max-height:none!important;transform:none!important;background:#f8f7f3!important}
+#portfolio .work-card:has(a[href="https://healthcare.carolinew.net/"]) .portfolio-preview-card:hover img{transform:none!important}
