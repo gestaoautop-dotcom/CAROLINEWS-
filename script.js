@@ -5,7 +5,7 @@
 
   function words() {
     return window.CWSLanguage && window.CWSLanguage.current === 'pt'
-      ? ['desenvolvedora.', 'designer.'] : ['a developer.', 'a designer.'];
+      ? ['criativa.', 'entusiasmada.', 'uma artista.'] : ['creative.', 'enthusiastic.', 'an artist.'];
   }
   const typeSpeed = 110;     // ms por letra digitada
   const deleteSpeed = 60;    // ms por letra apagada
