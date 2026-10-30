@@ -1,0 +1,33 @@
+name: Install portfolio cover images
+on:
+  push:
+    branches: [main]
+    paths:
+      - portfolio_ready_to_install.zip
+      - .github/workflows/install-portfolio-covers.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  install-covers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Extract only the four portfolio covers
+        run: |
+          unzip -o portfolio_ready_to_install.zip 'portfolio-covers/*.webp' -d .
+          test -s portfolio-covers/mora-cover.webp
+          test -s portfolio-covers/vista-cover.webp
+          test -s portfolio-covers/irvine-cover.webp
+          test -s portfolio-covers/starbase-cover.webp
+      - name: Commit generated assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio-covers/*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Install optimized portfolio cover images"
+            git push
+          fi
