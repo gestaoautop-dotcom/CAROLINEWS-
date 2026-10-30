@@ -54,5 +54,6 @@ jobs:
           git add portfolio-covers/*.jpg
           if ! git diff --cached --quiet; then
             git commit -m "Refresh real website portfolio screenshots"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
