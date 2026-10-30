@@ -49,3 +49,12 @@
 #portfolio .portfolio-cover-title{font-size:clamp(25px,3.5vw,45px);font-weight:600;text-align:center;letter-spacing:-.05em;line-height:1.1;text-shadow:0 2px 18px #0008}
 #portfolio .portfolio-project-link{display:inline-flex;color:#c8e9db;font-size:13px;text-decoration:none;margin:12px 0 18px;border-bottom:1px solid currentColor;padding-bottom:4px}
 #portfolio .portfolio-project-link:hover{color:#fff}
+
+/* Full-homepage portfolio thumbnails, without cropping navigation or hero text */
+#portfolio .portfolio-cover-link{background:#101820!important;padding:0!important;aspect-ratio:16/10;display:block;overflow:hidden;isolation:isolate}
+#portfolio .portfolio-cover-link::before{content:"";position:absolute;inset:0;background-image:var(--preview-image);background-position:center top;background-size:contain;background-repeat:no-repeat;z-index:0;transform:none}
+#portfolio .work-card:hover .portfolio-cover-link::before{transform:scale(1.015)}
+#portfolio .portfolio-cover-link .work-cover-index,#portfolio .portfolio-cover-link .work-cover-note{z-index:2;color:#fff;text-shadow:0 1px 7px #000}
+#portfolio .portfolio-cover-link .work-cover-index{background:#111b27ba;border-radius:30px;padding:5px 10px;left:15px;right:auto;top:13px}
+#portfolio .portfolio-cover-link .work-cover-note{background:#111b27cc;border-radius:30px;padding:6px 12px;left:auto;right:14px;bottom:14px}
+@media(max-width:650px){#portfolio .portfolio-cover-link{aspect-ratio:16/10}}
