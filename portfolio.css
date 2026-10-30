@@ -58,3 +58,10 @@
 #portfolio .portfolio-cover-link .work-cover-index{background:#111b27ba;border-radius:30px;padding:5px 10px;left:15px;right:auto;top:13px}
 #portfolio .portfolio-cover-link .work-cover-note{background:#111b27cc;border-radius:30px;padding:6px 12px;left:auto;right:14px;bottom:14px}
 @media(max-width:650px){#portfolio .portfolio-cover-link{aspect-ratio:16/10}}
+
+/* Portfolio previews: pure screenshots, no overlay labels */
+#portfolio .portfolio-cover-link{display:block!important;position:relative!important;background:#121b23!important;aspect-ratio:16/10!important;padding:0!important;overflow:hidden}
+#portfolio .portfolio-cover-link::before{content:"";position:absolute;inset:0;z-index:1;background-image:var(--preview-image);background-size:contain;background-position:center center;background-repeat:no-repeat;transform:none!important;transition:transform .3s ease}
+#portfolio .portfolio-cover-link:not(.portfolio-cover-photo)::before{background-image:none}
+#portfolio .portfolio-cover-link .work-cover-index,#portfolio .portfolio-cover-link .work-cover-note,#portfolio .portfolio-cover-link .portfolio-cover-title{display:none!important}
+#portfolio .portfolio-cover-link:hover::before{transform:scale(1.01)!important}
