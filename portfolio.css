@@ -76,3 +76,8 @@
 #portfolio .portfolio-preview-card{aspect-ratio:auto!important;min-height:0!important;height:auto!important;line-height:0}
 #portfolio .portfolio-preview-card img{width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:auto!important;object-fit:initial!important;object-position:initial!important;display:block!important}
 #portfolio .portfolio-preview-card:hover img{transform:none!important}
+
+#portfolio .portfolio-coming-soon{position:relative;cursor:default;pointer-events:none}
+#portfolio .portfolio-coming-soon img{opacity:.38!important;filter:grayscale(.5)}
+#portfolio .portfolio-coming-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;color:#fff;font-size:clamp(19px,2.3vw,29px);font-weight:600;letter-spacing:.04em;background:#0a101b55}
+#portfolio .portfolio-disabled{color:#aeb8c7!important;border-bottom:0!important;cursor:default}
