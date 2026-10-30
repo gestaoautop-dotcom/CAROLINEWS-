@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://carolinew.net/sitemap.xml
