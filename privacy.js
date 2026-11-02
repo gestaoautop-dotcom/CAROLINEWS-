@@ -1,5 +1,7 @@
 (function () {
   'use strict';
+  if (window.__cwsPrivacyLoaded) return;
+  window.__cwsPrivacyLoaded = true;
   const key = 'cws-privacy-choice';
   const marketingKey = 'cws-meta-consent-v1';
   const pixelId = '1158717493164674';
