@@ -1,13 +1,71 @@
 (function () {
   'use strict';
   const key = 'cws-privacy-choice';
+  const marketingKey = 'cws-meta-consent-v1';
+  const pixelId = '1158717493164674';
+  let pixelInitialized = false;
+  let pageViewSent = false;
+  let sessionConsent = false;
   let previousFocus = null;
+
+  function marketingAllowed() {
+    if (navigator.globalPrivacyControl === true) return false;
+    try { return localStorage.getItem(key) === 'all' && localStorage.getItem(marketingKey) === 'yes'; }
+    catch (_) { return sessionConsent; }
+  }
+  function clearMetaCookies() {
+    const domains = location.hostname.split('.');
+    ['_fbp', '_fbc'].forEach(function (name) {
+      document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax';
+      for (let i = 0; i < domains.length - 1; i++) {
+        document.cookie = name + '=; Max-Age=0; path=/; domain=.' + domains.slice(i).join('.') + '; SameSite=Lax';
+      }
+    });
+  }
+  function syncPixel() {
+    if (!marketingAllowed()) {
+      if (typeof window.fbq === 'function') window.fbq('consent', 'revoke');
+      clearMetaCookies();
+      return;
+    }
+    if (!window.fbq) {
+      const fbq = window.fbq = function () {
+        if (fbq.callMethod) fbq.callMethod.apply(fbq, arguments);
+        else fbq.queue.push(arguments);
+      };
+      window._fbq = fbq;
+      fbq.push = fbq;
+      fbq.loaded = true;
+      fbq.version = '2.0';
+      fbq.queue = [];
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+      document.head.appendChild(script);
+    }
+    window.fbq('consent', 'grant');
+    if (!pixelInitialized) {
+      // Only explicit PageView events; no automatic button/form events.
+      window.fbq('set', 'autoConfig', false, pixelId);
+      window.fbq('init', pixelId);
+      pixelInitialized = true;
+    }
+    if (!pageViewSent) {
+      window.fbq('track', 'PageView');
+      pageViewSent = true;
+    }
+  }
 
   function readChoice() {
     try { return localStorage.getItem(key); } catch (_) { return null; }
   }
   function saveChoice(value) {
-    try { localStorage.setItem(key, value); } catch (_) {}
+    sessionConsent = value === 'all';
+    try {
+      localStorage.setItem(key, value);
+      localStorage.setItem(marketingKey, sessionConsent ? 'yes' : 'no');
+    } catch (_) {}
+    syncPixel();
     window.dispatchEvent(new CustomEvent('cws:privacychange', { detail: { choice: value } }));
   }
   function closePanel() {
@@ -53,7 +111,7 @@
       <button class="cws-privacy-x" type="button" data-choice="close" aria-label="Close privacy notice">×</button>
       <p class="cws-privacy-eyebrow">Privacy</p>
       <h2 id="cws-privacy-title">Your privacy matters.</h2>
-      <p class="cws-privacy-copy" id="cws-privacy-description">We use essential preferences to keep this website working properly. Optional cookies are currently off.</p>
+      <p class="cws-privacy-copy" id="cws-privacy-description">We store essential preferences to keep this website working properly. With your permission, Meta Pixel measures visits and advertising performance and may support personalized ads on Facebook and Instagram. Choose Essential Only to keep marketing tracking off. You can change your choice at any time using Privacy preferences.</p>
       <a href="/privacy.html">Privacy policy</a>
       <div class="cws-privacy-actions">
         <button class="cws-privacy-accept" type="button" data-choice="all">Accept All Cookies</button>
@@ -79,7 +137,15 @@
   document.addEventListener('click', function (event) {
     if (event.target.closest('#cws-privacy-settings')) openPreferences();
   });
-  function init() { if (!readChoice()) openPreferences(); }
+  window.addEventListener('storage', function (event) {
+    if (event.key === key || event.key === marketingKey || event.key === null) syncPixel();
+  });
+  function init() {
+    syncPixel();
+    let needsMarketingChoice = false;
+    try { needsMarketingChoice = readChoice() === 'all' && localStorage.getItem(marketingKey) === null; } catch (_) {}
+    if (!readChoice() || needsMarketingChoice) openPreferences();
+  }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 })();
